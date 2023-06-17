@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewsController;
@@ -52,3 +53,6 @@ Route::get('news/detail/{id}', [NewsController::class, 'detailnews'])->name('det
 Route::get('news/delete/{id}', [NewsController::class, 'deletenews'])->name('deletenews')->middleware('auth');
 Route::get('/file/{filename}', [NewsController::class, 'getFile'])->name('getFile');
 Route::get('/list-files', [NewsController::class, 'getListFiles'])->name('getListFiles');
+//contact
+Route::get('contact/view', [ContactController::class, 'viewcontact'])->name('viewcontact')->middleware('auth');
+Route::get('contact/detail/{id}', [ContactController::class, 'detailcontact'])->name('detailcontact')->middleware('auth');

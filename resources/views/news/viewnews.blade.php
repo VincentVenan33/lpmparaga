@@ -42,7 +42,7 @@
                                 <td class="admin-berita">{{$nws->id_admin}}</td>
                                 <td class="button-container">
                                     <div class="button-wrapper">
-                                      <a href="{{route('detailnews', $nws->id)}}" class="btn btn-info btn-sm"><i class="ti-info"></i></a><br>
+                                      <a href="{{route('detailnews', $nws->id)}}" class="btn btn-info btn-sm"><i class="ti-info"></i></a>
                                     </div>
                                     <div class="button-wrapper horizontal-buttons">
                                       <a href="{{route('changenews', $nws->id)}}" class="btn btn-warning btn-sm"><i class="ti-pencil"></i></a>

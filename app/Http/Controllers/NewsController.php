@@ -119,7 +119,7 @@ class NewsController extends Controller
                 }
             }
         }
-        
+
         // Menggabungkan file yang diunggah dengan file yang sudah ada
         if (!empty($request->foto_url)) {
             $existingFilenames = explode(',', $request->foto_url);
@@ -162,8 +162,6 @@ class NewsController extends Controller
 
         return view('news.detailnews', $data);
     }
-
-
 
     public function deletenews($id)
     {
