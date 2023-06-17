@@ -38,12 +38,12 @@
                         <tbody>
                         @foreach($users as $usr)
                                         <tr>
-                                            <th>{{ ( $users->currentPage() - 1 ) * $users->perPage() + $loop->iteration }}</th>
-                                            <td>{{$usr->name}}</td>
-                                            <td>{{$usr->username}}</td>
-                                            <td>{{$usr->email}}</td>
-                                            <td>{{$usr->role}}</td>
-                                            <td>{{($usr->status ==1 ? "AKTIF" : "NON AKTIF")}}</td>
+                                            <th class="user-number">{{ ( $users->currentPage() - 1 ) * $users->perPage() + $loop->iteration }}</th>
+                                            <td class="user-name">{{$usr->name}}</td>
+                                            <td class="user-username">{{$usr->username}}</td>
+                                            <td class="user-email">{{$usr->email}}</td>
+                                            <td class="user-role">{{$usr->role}}</td>
+                                            <td class="user-status">{{($usr->status ==1 ? "AKTIF" : "NON AKTIF")}}</td>
                                             <td>
                                             <a href="{{route('changeusers', $usr->id)}}" class="btn btn-warning btn-sm"><i class="ti-pencil"></i></a>
                                             <a href="{{route('deleteusers', $usr->id)}}" onclick="return confirm('Apakah Anda Yakin Menghapus Users ini?');" class="btn btn-danger btn-sm"><i class="ti-trash"></i></a>

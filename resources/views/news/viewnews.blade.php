@@ -35,7 +35,7 @@
             <tbody>
               @foreach($news as $nws)
                             <tr>
-                                <th>{{ ( $news->currentPage() - 1 ) * $news->perPage() + $loop->iteration }}</th>
+                                <th class="nomor-berita">{{ ( $news->currentPage() - 1 ) * $news->perPage() + $loop->iteration }}</th>
                                 <td class="kategori-berita">{{$nws->kat_berita}}</td>
                                 <td class="judul-berita">{{$nws->judul}}</td>
                                 <td class="isi-berita">{{$nws->isi}}</td>
