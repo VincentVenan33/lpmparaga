@@ -1,0 +1,756 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: SKT Newspaper Lite\n"
+"POT-Creation-Date: 2020-12-22 10:57+0530\n"
+"PO-Revision-Date: 2020-12-22 10:57+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: 404.php:16
+msgid "<strong>404</strong> Not Found"
+msgstr ""
+
+#: 404.php:18
+msgid ""
+"Looks like you have taken a wrong turn Dont worry... it happens to the best "
+"of us."
+msgstr ""
+
+#: archive.php:30
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:38
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:41
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:44
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:47
+msgid "Asides"
+msgstr ""
+
+#: archive.php:50
+msgid "Images"
+msgstr ""
+
+#: archive.php:53
+msgid "Videos"
+msgstr ""
+
+#: archive.php:56
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:59
+msgid "Links"
+msgstr ""
+
+#: archive.php:62
+msgid "Archives"
+msgstr ""
+
+#: comments.php:29
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:36 comments.php:56
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:37 comments.php:57
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:38 comments.php:58
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr ""
+
+#: content-page.php:18 content-single.php:30 content.php:38 image.php:60
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:23 content-single.php:42 content.php:72 image.php:34
+#: image.php:66 inc/template-tags.php:56 inc/template-tags.php:72
+msgid "Edit"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:36 content.php:49 content.php:59
+msgid ", "
+msgstr ""
+
+#: content.php:31
+msgid "Read More"
+msgstr ""
+
+#: content.php:35
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content.php:53
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: content.php:63
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: content.php:69
+msgid "Leave a comment"
+msgstr ""
+
+#: content.php:69
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:69
+msgid "% Comments"
+msgstr ""
+
+#: customize-pro/example-1/class-customize.php:76
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: customize-pro/example-1/class-customize.php:77
+msgid "Upgrade Now"
+msgstr ""
+
+#: functions.php:51
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:52
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:65
+msgid "Right Sidebar"
+msgstr ""
+
+#: functions.php:66
+msgid "Appears on Pages sidebar"
+msgstr ""
+
+#: header.php:49 searchform.php:11
+msgctxt "placeholder"
+msgid "Search..."
+msgstr ""
+
+#: header.php:50
+msgctxt "submit button"
+msgid ""
+msgstr ""
+
+#: header.php:82
+msgid "Menu"
+msgstr ""
+
+#: image.php:24
+#, php-format
+msgid ""
+"Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\">%2$s</time></span> at <a href=\"%3$s\">%4$s &times; %5$s</a> in <a "
+"href=\"%6$s\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+
+#: image.php:39
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr ""
+
+#: image.php:40
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/about-themes.php:5
+msgid "About Theme"
+msgstr ""
+
+#: inc/about-themes.php:24
+msgid "About Theme Info"
+msgstr ""
+
+#: inc/about-themes.php:32
+msgid "Live Demo"
+msgstr ""
+
+#: inc/about-themes.php:33
+msgid "Buy Pro"
+msgstr ""
+
+#: inc/about-themes.php:34 inc/includes/class-options-framework-admin.php:186
+msgid "Documentation"
+msgstr ""
+
+#: inc/custom-functions.php:19
+msgid ""
+"For More Options buy pro version <a href=\"https://www.sktthemes.net/shop/"
+"newspaper-wordpress-theme/\" target=\"_blank\">Buy Now</a>"
+msgstr ""
+
+#: inc/custom-functions.php:116
+#, php-format
+msgid "View all posts in %s"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:65
+#: inc/includes/class-options-framework-admin.php:66
+msgid "Theme Options"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:165
+msgid "Save Options"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:166
+msgid "Restore Defaults"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:166
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:174 options.php:1122
+msgid "Our Themes"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:180
+msgid "Forum"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:182
+msgid "You can post your questions at our"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:182
+msgid "support forum"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:188
+msgid "For documentation and support check this link"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:215
+msgid "Default options restored."
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:257
+msgid "Options saved."
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:45
+msgid "No file chosen"
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:48
+#: inc/includes/class-options-media-uploader.php:91
+msgid "Upload"
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:50
+#: inc/includes/class-options-media-uploader.php:92
+msgid "Remove"
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:53
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:72
+msgid "View File"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:281
+msgid "No Repeat"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:282
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:283
+msgid "Repeat Vertically"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:284
+msgid "Repeat All"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:295
+msgid "Top Left"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:296
+msgid "Top Center"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:297
+msgid "Top Right"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:298
+msgid "Middle Left"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:299
+msgid "Middle Center"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:300
+msgid "Middle Right"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:301
+msgid "Bottom Left"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:302
+msgid "Bottom Center"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:303
+msgid "Bottom Right"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:314
+msgid "Scroll Normally"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:315
+msgid "Fixed in Place"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:381
+msgid "Normal"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:382
+msgid "Italic"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:383
+msgid "Bold"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:384
+msgid "Bold Italic"
+msgstr ""
+
+#: inc/template-tags.php:28
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:30
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: inc/template-tags.php:31
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: inc/template-tags.php:34
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: inc/template-tags.php:37
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:56
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:69
+#, php-format
+msgctxt "1: date"
+msgid "%1$s"
+msgstr ""
+
+#: inc/template-tags.php:75
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:154
+#, php-format
+msgid ""
+"<span class=\"posted-on\">Published %1$s</span><span class=\"byline\"> by "
+"%2$s</span>"
+msgstr ""
+
+#: index.php:71 index.php:78 page.php:38 page.php:45
+msgid "Top 10 Peaceful Countries in the world"
+msgstr ""
+
+#: index.php:73 index.php:80 page.php:40 page.php:47
+msgid "Travel"
+msgstr ""
+
+#: no-results.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: no-results.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: no-results.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: options.php:771
+msgid "Basic Settings"
+msgstr ""
+
+#: options.php:774
+msgid "Inner Page Banner"
+msgstr ""
+
+#: options.php:775
+msgid "Upload inner page banner for site"
+msgstr ""
+
+#: options.php:781
+msgid "Logo"
+msgstr ""
+
+#: options.php:782
+msgid "Upload your main logo here"
+msgstr ""
+
+#: options.php:789
+msgid "Custom CSS"
+msgstr ""
+
+#: options.php:790
+msgid ""
+"Some Custom Styling for your site. Place any css codes here instead of the "
+"style.css file."
+msgstr ""
+
+#: options.php:797
+msgid "Font Faces"
+msgstr ""
+
+#: options.php:798
+msgid "Select font for the body text"
+msgstr ""
+
+#: options.php:806
+msgid "Font Sizes"
+msgstr ""
+
+#: options.php:807
+msgid "Select font size for body text"
+msgstr ""
+
+#: options.php:815
+msgid "Font Colors"
+msgstr ""
+
+#: options.php:816
+msgid "Select font color for the body text"
+msgstr ""
+
+#: options.php:823
+msgid "Select font color for navigation"
+msgstr ""
+
+#: options.php:829
+msgid "Select all link font color and other background color"
+msgstr ""
+
+#: options.php:836
+msgid "Sections"
+msgstr ""
+
+#: options.php:840
+msgid "Left Side Slider Category Posts Below the Navigation"
+msgstr ""
+
+#: options.php:841
+msgid ""
+"Select left side category for slider below the navigation will show all posts"
+msgstr ""
+
+#: options.php:848
+msgid "Right Side Category Posts Below the Navigation"
+msgstr ""
+
+#: options.php:849
+msgid ""
+"Select category for right side below the navigation will show recent 4 posts"
+msgstr ""
+
+#: options.php:857
+msgid "Recent Posts of the Category"
+msgstr ""
+
+#: options.php:858
+msgid "select category for posts (will show recent 2 posts of the category)"
+msgstr ""
+
+#: options.php:865
+msgid "Number of Sections"
+msgstr ""
+
+#: options.php:866
+msgid "Select number of sections"
+msgstr ""
+
+#: options.php:874
+msgid "<h3>Section "
+msgstr ""
+
+#: options.php:879
+msgid "Section Title"
+msgstr ""
+
+#: options.php:884
+msgid "Section ID"
+msgstr ""
+
+#: options.php:885
+msgid ""
+"Enter your section ID here. SECTION ID MUST BE IN SMALL LETTERS ONLY AND DO "
+"NOT ADD SPACE OR SYMBOL."
+msgstr ""
+
+#: options.php:890
+msgid "Section Background Color"
+msgstr ""
+
+#: options.php:891
+msgid "Select background color for section"
+msgstr ""
+
+#: options.php:897
+msgid "Background Image"
+msgstr ""
+
+#: options.php:903
+msgid "Section CSS Class"
+msgstr ""
+
+#: options.php:904
+msgid "Set class for this section."
+msgstr ""
+
+#: options.php:910
+msgid "Hide Section"
+msgstr ""
+
+#: options.php:911
+msgid "Check to hide this section"
+msgstr ""
+
+#: options.php:916
+msgid "Section Content"
+msgstr ""
+
+#: options.php:925
+msgid "Layout Settings Buy Pro Version"
+msgstr ""
+
+#: options.php:973
+msgid "Header"
+msgstr ""
+
+#: options.php:977
+msgid "Header Headline"
+msgstr ""
+
+#: options.php:978
+msgid ""
+"Change icon from font awesome NOTE: Icon name should be in lowercase without "
+"space.(exa.fire) More social icons can be found at: http://fortawesome."
+"github.io/Font-Awesome/icons/"
+msgstr ""
+
+#: options.php:984
+msgid "Headline Text"
+msgstr ""
+
+#: options.php:985
+msgid "headline text for header"
+msgstr ""
+
+#: options.php:993
+msgid "Footer"
+msgstr ""
+
+#: options.php:997
+msgid "Footer Layout"
+msgstr ""
+
+#: options.php:998
+msgid "Select footer layout ex: Footer column 1, 2, 3, 4"
+msgstr ""
+
+#: options.php:1005
+msgid "Footer Quick Links"
+msgstr ""
+
+#: options.php:1006
+msgid "Quick Link title."
+msgstr ""
+
+#: options.php:1012
+msgid "Footer Recent Posts"
+msgstr ""
+
+#: options.php:1013
+msgid "Footer Recent Posts title."
+msgstr ""
+
+#: options.php:1018
+msgid "Footer Address Title"
+msgstr ""
+
+#: options.php:1019
+msgid "Footer Address title."
+msgstr ""
+
+#: options.php:1025 options.php:1031
+msgid "Add company address here."
+msgstr ""
+
+#: options.php:1037
+msgid "Add phone number here."
+msgstr ""
+
+#: options.php:1043
+msgid "Add email address here."
+msgstr ""
+
+#: options.php:1049
+msgid "Add company url here with http://."
+msgstr ""
+
+#: options.php:1055
+msgid "Footer Get In Touch"
+msgstr ""
+
+#: options.php:1056
+msgid "Footer Get In Touch title."
+msgstr ""
+
+#: options.php:1062
+msgid ""
+"add social icon name and link in the shortcodes.  NOTE: Icon name should be "
+"in lowercase without space.(exa.phone) More social icons can be found at: "
+"http://fortawesome.github.io/Font-Awesome/icons/"
+msgstr ""
+
+#: options.php:1106
+msgid "Footer Copyright"
+msgstr ""
+
+#: options.php:1107
+msgid "Copyright Text for your site."
+msgstr ""
+
+#: options.php:1113
+msgid "Footre Text Link"
+msgstr ""
+
+#: options.php:1125
+msgid ""
+"SKT Newspaper Lite WordPress theme has been Designed and Created by <a href="
+"\""
+msgstr ""
+
+#: options.php:1128
+msgid "<a href=\""
+msgstr ""
+
+#: search.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:13
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: sidebar-right.php:12
+msgid "Follow Us"
+msgstr ""
+
+#: sidebar-right.php:29
+msgid "About Octagon"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "SKT Newspaper Lite"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://www.sktthemes.org/shop/newspaper-wordpress-theme/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"SKT Newspaper Lite is a modern and elegant newspaper WordPress theme which "
+"can suit news, blog of any type be it commercial or personal. Inner pages "
+"layout and posts shortcodes make it a killer template for any blogging "
+"purpose like fashion, travel, children, education, photography, portfolio, "
+"model, agency news and different other types of industry. Compatible with "
+"several plugins and SEO friendly and translation ready and multilingual "
+"ready. Demo: http://sktthemesdemo.net/newspaper/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "SKT Themes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.sktthemes.org"
+msgstr ""

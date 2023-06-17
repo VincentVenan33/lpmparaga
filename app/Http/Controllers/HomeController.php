@@ -18,4 +18,11 @@ class HomeController extends Controller
             'title' => $title,
         ]);
     }
+    public function readers()
+    {
+        $title = "Home";
+        return view('readers/readers', [
+            'title' => $title,
+        ]);
+    }
 }

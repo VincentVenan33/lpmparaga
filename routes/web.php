@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 $currentRoute = Route::currentRouteName();
 
 //dashboard
-Route::get('/', [HomeController::class, 'home'])->name('index')->middleware('auth');
+Route::get('/', [HomeController::class, 'readers'])->name('index');
 Route::get('dashboard', [HomeController::class, 'home'])->name('dashboard')->middleware('auth');
 //login
 Route::get('login', function () {
@@ -56,3 +56,7 @@ Route::get('/list-files', [NewsController::class, 'getListFiles'])->name('getLis
 //contact
 Route::get('contact/view', [ContactController::class, 'viewcontact'])->name('viewcontact')->middleware('auth');
 Route::get('contact/detail/{id}', [ContactController::class, 'detailcontact'])->name('detailcontact')->middleware('auth');
+//reader
+// Route::get('reader/detail/{id}', [ContactController::class, 'detailreader'])->name('detailreader');
+// Route::get('reader/abouttus', [ContactController::class, 'aboutus'])->name('aboutus');
+// Route::get('reader/contactus', [ContactController::class, 'contactus'])->name('contactus');
