@@ -27,7 +27,7 @@
                 <th>
                   Admin
                 </th>
-                <th>
+                <th class="text-center">
                   Action
                 </th>
               </tr>
@@ -36,33 +36,18 @@
               @foreach($news as $nws)
                             <tr>
                                 <th>{{ ( $news->currentPage() - 1 ) * $news->perPage() + $loop->iteration }}</th>
-                                <td>{{$nws->kat_berita}}</td>
-                                <td>
-                                    @php
-                                    $words = explode(' ', $nws->judul);
-                                    $firstLine = implode(' ', array_slice($words, 0, 3));
-                                    $remainingWords = array_slice($words, 3);
-                                    $remainingLines = array_chunk($remainingWords, 3);
-                                @endphp
-                                <p>{{ $firstLine }}</p>
-                                @foreach ($remainingLines as $line)
-                                    <p>{{ implode(' ', $line) }}</p>
-                                @endforeach</td>
-                                <td> @php
-                                    $words = explode(' ', $nws->isi);
-                                    $firstLine = implode(' ', array_slice($words, 0, 4));
-                                    $remainingWords = array_slice($words, 4);
-                                    $remainingLines = array_chunk($remainingWords, 4);
-                                @endphp
-                                <p>{{ $firstLine }}</p>
-                                @foreach ($remainingLines as $line)
-                                    <p>{{ implode(' ', $line) }}</p>
-                                @endforeach</td>
-                                <td>{{$nws->id_admin}}</td>
-                                <td>
-                                <a href="{{route('changenews', $nws->id)}}" class="btn btn-warning btn-sm"><i class="ti-pencil"></i></a>
-                                <a href="{{route('detailnews', $nws->id)}}" class="btn btn-info btn-sm"><i class="ti-info"></i></a>
-                                <a href="{{route('deletenews', $nws->id)}}" onclick="return confirm('Apakah Anda Yakin Menghapus news ini?');" class="btn btn-danger btn-sm"><i class="ti-trash"></i></a>
+                                <td class="kategori-berita">{{$nws->kat_berita}}</td>
+                                <td class="judul-berita">{{$nws->judul}}</td>
+                                <td class="isi-berita">{{$nws->isi}}</td>
+                                <td class="admin-berita">{{$nws->id_admin}}</td>
+                                <td class="button-container">
+                                    <div class="button-wrapper">
+                                      <a href="{{route('detailnews', $nws->id)}}" class="btn btn-info btn-sm"><i class="ti-info"></i></a><br>
+                                    </div>
+                                    <div class="button-wrapper horizontal-buttons">
+                                      <a href="{{route('changenews', $nws->id)}}" class="btn btn-warning btn-sm"><i class="ti-pencil"></i></a>
+                                      <a href="{{route('deletenews', $nws->id)}}" onclick="return confirm('Apakah Anda Yakin Menghapus news ini?');" class="btn btn-danger btn-sm"><i class="ti-trash"></i></a>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
