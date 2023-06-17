@@ -18,25 +18,25 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         UsersModel::create([
-            'name' => 'Venansius Fortunatus Wijaya',
-            'username' => 'ven',
+            'name' => 'Super Admin',
+            'username' => 'superadmin',
             'email' => 's@gmail.com',
             'role' => 'SUPER_ADMIN',
             'status' => '1',
             'password' => Hash::make('admin')
         ]);
         UsersModel::create([
-            'name' => 'Venansius Fortunatus Wijaya',
-            'username' => 'ven',
+            'name' => 'Admin',
+            'username' => 'admin',
             'email' => 'a@gmail.com',
             'role' => 'ADMIN',
             'status' => '1',
             'password' => Hash::make('admin')
         ]);
         UsersModel::create([
-            'name' => 'Venansius Fortunatus Wijaya',
-            'username' => 'ven',
-            'email' => 'd@gmail.com',
+            'name' => 'User',
+            'username' => 'user',
+            'email' => 'u@gmail.com',
             'role' => 'USER',
             'status' => '1',
             'password' => Hash::make('admin')
