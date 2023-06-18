@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ContactModel extends Model
+class PengunjungModel extends Model
 {
     use HasFactory;
-    protected $table = 'contact';
+    protected $table = 'statistik_pengunjung';
     protected $primaryKey = 'id';
-    protected $fillable = ['nama', 'email', 'pesan', 'status'];
+    protected $fillable = ['page', 'ip', 'created_at', 'updated_at'];
 }

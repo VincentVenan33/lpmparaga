@@ -111,6 +111,11 @@
             <a class="nav-link" href="{{route('viewcontact')}}">
               <i class="ti-email menu-icon"></i>
               <span class="menu-title">Message</span>
+              @isset($unread_count)
+                @section('notifications')
+                    <span class="badge badge-danger" style="padding: 4px 8px; font-weight: bold; line-height: 14px; font-size: 12px;">{{ $unread_count }}</span>
+                @show
+            @endisset
             </a>
           </li>
           <li class="nav-item">
@@ -121,7 +126,22 @@
           </li>
         </ul>
       </nav>
-      @yield('main')
+    <div class="main-panel">
+        <div class="content-wrapper">
+            @yield('main')
+            <footer class="footer">
+                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright 2023 All Rights Reserved By:
+                    <a href="https://www.instagram.com/paraga_unika/" style="text-decoration:none;">
+                    <strong class="text-info">Paraga Unika</strong>
+                    </a>
+                </span>
+                </div>
+            </footer>
+        </div>
+        <!-- partial:partials/_footer.html -->
+        <!-- partial -->
+    </div>
       <!-- partial -->
       <!-- main-panel ends -->
     </div>
@@ -150,6 +170,8 @@
   <script src="{{  url('') }}/js/dashboard.js"></script>
   <script src="{{  url('') }}/js/Chart.roundedBarCharts.js"></script>
   <script type="text/javascript" src="{{  url('') }}/js/trix.js"></script>
+  <script src="{{  url('') }}/js/apexcharts.min.js"></script>
+  {{-- <script src="{{  url('') }}/js/apexcharts.custom.js"></script> --}}
   <!-- End custom js for this page-->
   <!-- Toast -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/js/toastr.js"></script>

@@ -51,11 +51,13 @@ Route::get('news/change/{id}', [NewsController::class, 'changenews'])->name('cha
 Route::post('news/update', [NewsController::class, 'updatenews'])->name('updatenews')->middleware('auth');
 Route::get('news/detail/{id}', [NewsController::class, 'detailnews'])->name('detailnews')->middleware('auth');
 Route::get('news/delete/{id}', [NewsController::class, 'deletenews'])->name('deletenews')->middleware('auth');
-Route::get('/file/{filename}', [NewsController::class, 'getFile'])->name('getFile');
-Route::get('/list-files', [NewsController::class, 'getListFiles'])->name('getListFiles');
+Route::get('/file/{filename}', [NewsController::class, 'getFile'])->name('getFile')->middleware('auth');
+Route::get('/list-files', [NewsController::class, 'getListFiles'])->name('getListFiles')->middleware('auth');
 //contact
 Route::get('contact/view', [ContactController::class, 'viewcontact'])->name('viewcontact')->middleware('auth');
 Route::get('contact/detail/{id}', [ContactController::class, 'detailcontact'])->name('detailcontact')->middleware('auth');
+Route::get('contact/delete/{id}', [ContactController::class, 'deletecontact'])->name('deletecontact')->middleware('auth');
+Route::get('contact/readAll', [ContactController::class, 'readAll'])->name('readAllcontact')->middleware('auth');
 //reader
 // Route::get('reader/detail/{id}', [ContactController::class, 'detailreader'])->name('detailreader');
 // Route::get('reader/abouttus', [ContactController::class, 'aboutus'])->name('aboutus');
