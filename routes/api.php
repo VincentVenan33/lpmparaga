@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('news',[PostController::class,'getNews']);
+Route::get('news/{id}', [PostController::class, 'getNewsDetail']);
 Route::get('/image/{filename}',[PostController::class,'getImage']);
 Route::get('/list-file',[PostController::class,'getImageList']);
 Route::get('contact',[PostController::class,'getContact']);

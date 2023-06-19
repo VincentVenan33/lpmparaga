@@ -52,10 +52,26 @@ class PostController extends Controller
         return response()->json($files);
     }
 
+    public function getNewsDetail($id)
+    {
+        $news = NewsModel::find($id);
+
+        if ($news) {
+            // Modifikasi URL gambar
+            $news->foto_url = url('image/upload/' . $news->foto_url);
+
+            return new PostResource(true, 'Detail News', $news);
+        } else {
+            return new PostResource(false, 'News not found', null);
+        }
+    }
+
+
     //api contact
-    public function getContact(){
-        $contact = ContactModel::select('*')-> orderBy('id', 'desc')->get();
-        return new PostResource(true,'List Data Contact',$contact);
+    public function getContact()
+    {
+        $contact = ContactModel::select('*')->orderBy('id', 'desc')->get();
+        return new PostResource(true, 'List Data Contact', $contact);
     }
 
     /**
@@ -118,6 +134,4 @@ class PostController extends Controller
 
         return response()->json(['success' => true]);
     }
-
 }
-?>
