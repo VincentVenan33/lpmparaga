@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\NewsModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 use illuminate\validation;
 use Illuminate\Http\UploadedFile;
 
@@ -30,11 +31,17 @@ class NewsController extends Controller
     {
         $request->validate([
             "kat_berita" => "required|min:3",
-            "judul" => "required|min:5",
+            "judul" => [
+                "required",
+                "min:5",
+                Rule::unique('news', 'judul'),
+            ],
             "isi" => "required",
             "excerpt" => "nullable",
             'foto_url.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             "id_admin" => "required",
+        ], [
+            'judul.unique' => 'Judul sudah ada di database, coba masukkan judul lain.',
         ]);
 
         $filenames = [];

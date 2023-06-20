@@ -9,10 +9,19 @@
         @csrf
         <div class="form-group">
             <label for="kat_berita">Kategori Berita</label>
-            <input type="text" name="kat_berita" class="form-control @error('kat_berita')is-invalid @enderror" value="{{old('kat_berita')}}">
-                @error("kat_berita")
-                <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+            <select name="kat_berita" style="color: black;" class="form-control @error('kat_berita')is-invalid @enderror">
+                <option value="" disabled selected>Pilih Kategori</option>
+                <option value="Sosial Budaya">Sosial Budaya</option>
+                <option value="Kesehatan">Kesehatan</option>
+                <option value="Politik">Politik</option>
+                <option value="Ekonomi">Ekonomi</option>
+                <option value="Gametech">Gametech</option>
+                <option value="Olahraga">Olahraga</option>
+                <option value="Opini">Opini</option>
+            </select>
+            @error("kat_berita")
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
             <label for="judul">Judul</label>

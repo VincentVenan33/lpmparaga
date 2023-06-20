@@ -33,31 +33,31 @@ Route::get('login', function () {
 Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
 Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout');
 //users
-Route::get('users/view', [UsersController::class, 'viewusers'])->name('viewusers')->middleware('auth');
-Route::get('users/add', [UsersController::class, 'addusers'])->name('addusers')->middleware('auth');
-Route::post('users/save', [UsersController::class, 'saveusers'])->name('saveusers')->middleware('auth');
-Route::get('users/change/{id}', [UsersController::class, 'changeusers'])->name('changeusers')->middleware('auth');
-Route::post('users/update', [UsersController::class, 'updateusers'])->name('updateusers')->middleware('auth');
-Route::get('users/delete/{id}', [UsersController::class, 'deleteusers'])->name('deleteusers')->middleware('auth');
+Route::get('admin/users/view', [UsersController::class, 'viewusers'])->name('viewusers')->middleware('auth');
+Route::get('admin/users/add', [UsersController::class, 'addusers'])->name('addusers')->middleware('auth');
+Route::post('admin/users/save', [UsersController::class, 'saveusers'])->name('saveusers')->middleware('auth');
+Route::get('admin/users/change/{id}', [UsersController::class, 'changeusers'])->name('changeusers')->middleware('auth');
+Route::post('admin/users/update', [UsersController::class, 'updateusers'])->name('updateusers')->middleware('auth');
+Route::get('admin/users/delete/{id}', [UsersController::class, 'deleteusers'])->name('deleteusers')->middleware('auth');
 //profile
-Route::get('profile/change', [ProfilController::class, 'changeprofil'])->name('changeprofil')->middleware('auth');
-Route::post('profile/update', [ProfilController::class, 'updateprofile'])->name('updateprofile')->middleware('auth');
-Route::get('profile/delete', [ProfilController::class, 'deleteprofil'])->name('deleteprofil')->middleware('auth');
+Route::get('admin/profile/change', [ProfilController::class, 'changeprofil'])->name('changeprofil')->middleware('auth');
+Route::post('admin/profile/update', [ProfilController::class, 'updateprofile'])->name('updateprofile')->middleware('auth');
+Route::get('admin/profile/delete', [ProfilController::class, 'deleteprofil'])->name('deleteprofil')->middleware('auth');
 //news
-Route::get('news/view', [NewsController::class, 'viewnews'])->name('viewnews')->middleware('auth');
-Route::get('news/add', [NewsController::class, 'addnews'])->name('addnews')->middleware('auth');
-Route::post('news/save', [NewsController::class, 'savenews'])->name('savenews')->middleware('auth');
-Route::get('news/change/{id}', [NewsController::class, 'changenews'])->name('changenews')->middleware('auth');
-Route::post('news/update', [NewsController::class, 'updatenews'])->name('updatenews')->middleware('auth');
-Route::get('news/detail/{id}', [NewsController::class, 'detailnews'])->name('detailnews')->middleware('auth');
-Route::get('news/delete/{id}', [NewsController::class, 'deletenews'])->name('deletenews')->middleware('auth');
-Route::get('/file/{filename}', [NewsController::class, 'getFile'])->name('getFile')->middleware('auth');
-Route::get('/list-files', [NewsController::class, 'getListFiles'])->name('getListFiles')->middleware('auth');
+Route::get('admin/news/view', [NewsController::class, 'viewnews'])->name('viewnews')->middleware('auth');
+Route::get('admin/news/add', [NewsController::class, 'addnews'])->name('addnews')->middleware('auth');
+Route::post('admin/news/save', [NewsController::class, 'savenews'])->name('savenews')->middleware('auth');
+Route::get('admin/news/change/{id}', [NewsController::class, 'changenews'])->name('changenews')->middleware('auth');
+Route::post('admin/news/update', [NewsController::class, 'updatenews'])->name('updatenews')->middleware('auth');
+Route::get('admin/news/detail/{id}', [NewsController::class, 'detailnews'])->name('detailnews')->middleware('auth');
+Route::get('admin/news/delete/{id}', [NewsController::class, 'deletenews'])->name('deletenews')->middleware('auth');
+Route::get('admin/file/{filename}', [NewsController::class, 'getFile'])->name('getFile')->middleware('auth');
+Route::get('admin/list-files', [NewsController::class, 'getListFiles'])->name('getListFiles')->middleware('auth');
 //contact
-Route::get('contact/view', [ContactController::class, 'viewcontact'])->name('viewcontact')->middleware('auth');
-Route::get('contact/detail/{id}', [ContactController::class, 'detailcontact'])->name('detailcontact')->middleware('auth');
-Route::get('contact/delete/{id}', [ContactController::class, 'deletecontact'])->name('deletecontact')->middleware('auth');
-Route::get('contact/readAll', [ContactController::class, 'readAll'])->name('readAllcontact')->middleware('auth');
+Route::get('admin/contact/view', [ContactController::class, 'viewcontact'])->name('viewcontact')->middleware('auth');
+Route::get('admin/contact/detail/{id}', [ContactController::class, 'detailcontact'])->name('detailcontact')->middleware('auth');
+Route::get('admin/contact/delete/{id}', [ContactController::class, 'deletecontact'])->name('deletecontact')->middleware('auth');
+Route::get('admin/contact/readAll', [ContactController::class, 'readAll'])->name('readAllcontact')->middleware('auth');
 //reader
 // Route::get('reader/detail/{id}', [ContactController::class, 'detailreader'])->name('detailreader');
 // Route::get('reader/abouttus', [ContactController::class, 'aboutus'])->name('aboutus');

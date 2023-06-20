@@ -38,7 +38,7 @@
             @if(Auth::user()->role == "SUPER_ADMIN")
             <div class="form-group">
                 <label for="status">Role</label>
-                <select name="role" style="color: black;" class="form-control @error('role')is-invalid @enderror">
+                <select name="role" style="color: black; background: white;" class="form-control @error('role')is-invalid @enderror">
                     <option value="" disabled selected>Pilih Role</option>
                     <option value="ADMIN">ADMIN</option>
                     <option value="USER">USER</option>

@@ -60,12 +60,14 @@ class PostController extends Controller
             // Modifikasi URL gambar
             $news->foto_url = url('image/upload/' . $news->foto_url);
 
+            // Explode detail into an array
+            $news->detail = explode("\n", $news->detail);
+
             return new PostResource(true, 'Detail News', $news);
         } else {
             return new PostResource(false, 'News not found', null);
         }
     }
-
 
     //api contact
     public function getContact()

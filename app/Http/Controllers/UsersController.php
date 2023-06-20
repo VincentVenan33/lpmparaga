@@ -6,6 +6,7 @@ use App\Models\UsersModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class UsersController extends Controller
 {
@@ -27,6 +28,20 @@ class UsersController extends Controller
 
     public function saveusers(Request $request)
     {
+        $request->validate([
+            "name" => "required|min:5",
+            "username" => "required|min:3",
+            "email" => [
+                'required',
+                'email',
+                Rule::unique('users', 'email')->ignore($request->id),
+            ],
+            "password" => "required|min:5",
+            "role" => "required",
+        ], [
+            'email.unique' => 'Email sudah ada di database, coba gunakan email yang lain.',
+        ]);
+
         $users = UsersModel::create([
             'name' => $request->name,
             'username' => $request->username,
@@ -37,17 +52,9 @@ class UsersController extends Controller
         ]);
 
         if ($users) {
-            $request->validate([
-                "name" => "required|min:5",
-                "username" => "required|min:3",
-                "email" => "required",
-                "password" => "required|min:5",
-                "role" => "required",
-            ]);
-
-            return redirect()->route('viewusers')->with('message', 'Data added Successfully');
+            return redirect()->route('viewusers')->with('message', 'Data added successfully');
         } else {
-            return redirect()->route('viewusers')->with('error', 'Data added Error');
+            return redirect()->route('viewusers')->with('error', 'Failed to add data');
         }
     }
 
