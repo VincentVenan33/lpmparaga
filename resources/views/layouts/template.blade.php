@@ -329,6 +329,7 @@
                 e.preventDefault();
             })
         </script>
+    @yield('addjs')
 </body>
 
 </html>

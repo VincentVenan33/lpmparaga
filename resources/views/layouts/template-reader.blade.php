@@ -15,8 +15,9 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 :where(.wp-block-columns.is-layout-flex){gap: 2em;}
 .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
 </style>
+<link rel="stylesheet" href="{{  url('') }}/css/card.css">
 <link rel="shortcut icon" href="{{  url('') }}/images/Copy of Paraga HD png bg SQUARE.png" />
-<link rel="stylesheet" id="wpa-css-css" href="https://sktthemesdemo.net/newspaper/wp-content/plugins/honeypot/includes/css/wpa.css?ver=2.1" type="text/css" media="all" />
+<link rel="stylesheet" id="wpa-css-css" href="{{  url('') }}/css/readers/wpa.css" type="text/css" media="all" />
 <link rel="stylesheet" id="skt-newspaper-gfonts-arimo-css" href="//fonts.bunny.net/css?family=Arimo%3A400%2C700&#038;ver=6.1.1" type="text/css" media="all" />
 <link rel="stylesheet" id="skt-newspaper-gfonts-roboto-css" href="//fonts.bunny.net/css?family=Roboto%3A400%2C100%2C100italic%2C300%2C300italic%2C400italic%2C500%2C500italic%2C700%2C700italic%2C900&#038;ver=6.1.1" type="text/css" media="all" />
 <link rel="stylesheet" id="skt-newspaper-gfonts-body-css" href="//fonts.bunny.net/css?family=Arimo&#038;subset=cyrillic%2Carabic%2Cbengali%2Ccyrillic%2Ccyrillic-ext%2Cdevanagari%2Cgreek%2Cgreek-ext%2Cgujarati%2Chebrew%2Clatin-ext%2Ctamil%2Ctelugu%2Cthai%2Cvietnamese%2Clatin&#038;ver=6.1.1" type="text/css" media="all" />
@@ -28,7 +29,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <link rel="stylesheet" id="skt-newspaper-gfonts-h4-css" href="//fonts.bunny.net/css?family=Roboto&#038;subset=cyrillic%2Carabic%2Cbengali%2Ccyrillic%2Ccyrillic-ext%2Cdevanagari%2Cgreek%2Cgreek-ext%2Cgujarati%2Chebrew%2Clatin-ext%2Ctamil%2Ctelugu%2Cthai%2Cvietnamese%2Clatin&#038;ver=6.1.1" type="text/css" media="all" />
 <link rel="stylesheet" id="skt-newspaper-gfonts-h5-css" href="//fonts.bunny.net/css?family=Roboto&#038;subset=cyrillic%2Carabic%2Cbengali%2Ccyrillic%2Ccyrillic-ext%2Cdevanagari%2Cgreek%2Cgreek-ext%2Cgujarati%2Chebrew%2Clatin-ext%2Ctamil%2Ctelugu%2Cthai%2Cvietnamese%2Clatin&#038;ver=6.1.1" type="text/css" media="all" />
 <link rel="stylesheet" id="skt-newspaper-gfonts-h6-css" href="//fonts.bunny.net/css?family=Roboto&#038;subset=cyrillic%2Carabic%2Cbengali%2Ccyrillic%2Ccyrillic-ext%2Cdevanagari%2Cgreek%2Cgreek-ext%2Cgujarati%2Chebrew%2Clatin-ext%2Ctamil%2Ctelugu%2Cthai%2Cvietnamese%2Clatin&#038;ver=6.1.1" type="text/css" media="all" />
-<link rel="stylesheet" id="skt-newspaper-basic-style-css" href="https://sktthemesdemo.net/newspaper/wp-content/themes/skt-newspaper/style.css?ver=6.1.1" type="text/css" media="all" />
+<link rel="stylesheet" id="skt-newspaper-basic-style-css" href="{{  url('') }}/css/readers/basic-style.css" type="text/css" media="all" />
 <link rel="stylesheet" id="skt-newspaper-base-style-css" href="https://sktthemesdemo.net/newspaper/wp-content/themes/skt-newspaper/css/style_base.css?ver=6.1.1" type="text/css" media="all" />
 <link rel="stylesheet" id="skt-newspaper-editor-style-css" href="https://sktthemesdemo.net/newspaper/wp-content/themes/skt-newspaper/editor-style.css?ver=6.1.1" type="text/css" media="all" />
 <link rel="stylesheet" id="skt-newspaper-responsive-style-css" href="https://sktthemesdemo.net/newspaper/wp-content/themes/skt-newspaper/css/theme-responsive.css?ver=6.1.1" type="text/css" media="all" />
@@ -137,62 +138,44 @@ jQuery(document).ready(function() {
         </div>
         <div class="container">
         <div class="row">
-        <div class="col-4">
-            <a class="navbar-brand brand-logo mr-5" href="{{route('index')}}"><img src="{{  url('') }}/images/16024254591111.png" class="mr-2" alt="logo"/></a>
-        <h2>LPM PARAGA</h2>
-        <span class="tagline">Just another WordPress site</span>
-        </a>
-        </div>
-        <div class="col-8">
-        <a href="https://sktthemesdemo.net/newspaper/">
-        <img src="https://sktthemesdemo.net/newspaper/wp-content/themes/skt-newspaper/images/add-banner.jpg" alt=" " class="alignright" />
-        </a>
-        </div>
-        <div class="clear"></div>
-        </div>
+            <div class="col-4">
+                <a class="navbar-brand brand-logo mr-5" href="{{route('index')}}"><img src="{{  url('') }}/images/16024254591111.png" class="mr-2" alt="logo"/></a>
+            </a>
+            </div>
+            <div class="col-8">
+                <div class="kotak" style="margin: 5.5%;">
+                    <h2>LPM PARAGA</h2>
+                    <span class="tagline">Lembaga Pers Mahasiswa yang mengulik ragam peristiwa di seluruh dunia menurut perspektif mahasiswa</span>
+                </div>
+            {{-- <a href="https://sktthemesdemo.net/newspaper/">
+            <img src="https://sktthemesdemo.net/newspaper/wp-content/themes/skt-newspaper/images/add-banner.jpg" alt=" " class="alignright" />
+            </a> --}}
+            </div>
+            <div class="clear"></div>
+            </div>
         </div>
         <a href="#" class="toggleMenu" style="display:none;">Menu</a>
         <div class="nav">
-        <div class="menu-top_menu-container"><ul id="menu-top_menu" class="menu"><li id="menu-item-106" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-106"><a href="https://sktthemesdemo.net/newspaper/" aria-current="page">Home</a></li>
-        <li id="menu-item-121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-121"><a href="#">Home Layout</a>
+        <div class="menu-top_menu-container"><ul id="menu-top_menu" class="menu"><li id="menu-item-106" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-106"><a href="{{route('index')}}" aria-current="page">Home</a></li>
+        <li id="menu-item-121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-121"><a href="#">Kategori Berita</a>
         <ul class="sub-menu">
-        <li id="menu-item-114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-114"><a href="https://sktthemesdemo.net/newspaper/home-layout-classic/">Home Layout Classic</a></li>
-        <li id="menu-item-115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"><a href="https://sktthemesdemo.net/newspaper/home-layout-masonry/">Home Layout Masonry</a></li>
-        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="https://sktthemesdemo.net/newspaper/home-layout-timeline/">Home Layout Timeline</a></li>
+        <li id="menu-item-114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-114"><a href="#">Sosial Budaya</a></li>
+        <li id="menu-item-115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"><a href="#">Kesehatan</a></li>
+        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="#">Politik</a></li>
+        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="#">Ekonomi</a></li>
+        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="#">Gametech</a></li>
+        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="#">Olahraga</a></li>
+        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="#">Opini</a></li>
         </ul>
         </li>
-        <li id="menu-item-123" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-123"><a href="#">Page Layout</a>
-        <ul class="sub-menu">
-        <li id="menu-item-120" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-120"><a href="https://sktthemesdemo.net/newspaper/page-right-sidebar/">Page Right Sidebar</a></li>
-        <li id="menu-item-118" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-118"><a href="https://sktthemesdemo.net/newspaper/page-left-sidebar/">Page Left Sidebar</a></li>
-        <li id="menu-item-119" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119"><a href="https://sktthemesdemo.net/newspaper/page-no-sidebar/">Page No Sidebar</a></li>
-        <li id="menu-item-117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-117"><a href="https://sktthemesdemo.net/newspaper/page-full-width/">Page Full Width</a></li>
-        </ul>
-        </li>
-        <li id="menu-item-122" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-122"><a href="#">Blog Layout</a>
-        <ul class="sub-menu">
-        <li id="menu-item-108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-108"><a href="https://sktthemesdemo.net/newspaper/blog-left-sidebar/">Blog Left Sidebar</a></li>
-        <li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="https://sktthemesdemo.net/newspaper/blog-right-sidebar/">Blog Right Sidebar</a></li>
-        <li id="menu-item-107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a href="https://sktthemesdemo.net/newspaper/blog-full-width/">Blog Full Width</a></li>
-        <li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://sktthemesdemo.net/newspaper/blog-left-to-right-sidebar/">Blog Left To Right Sidebar</a></li>
-        <li id="menu-item-110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110"><a href="https://sktthemesdemo.net/newspaper/blog-no-sidebar-2/">Blog No Sidebar</a></li>
-        </ul>
-        </li>
-        <li id="menu-item-135" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-135"><a href="#">Categories</a>
-        <ul class="sub-menu">
-        <li id="menu-item-136" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-136"><a href="https://sktthemesdemo.net/newspaper/grid-view/">Grid View</a></li>
-        <li id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137"><a href="https://sktthemesdemo.net/newspaper/list-view/">List View</a></li>
-        </ul>
-        </li>
-        <li id="menu-item-153" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-153"><a href="#">Shortcode</a>
-        <ul class="sub-menu">
-        <li id="menu-item-155" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-155"><a href="https://sktthemesdemo.net/newspaper/shortcodes-within-theme/">ShortCodes Within Theme</a></li>
-        </ul>
-        </li>
-        <li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="https://sktthemesdemo.net/newspaper/contact-us/">Contact Us</a></li>
-        </ul></div> </div>
+        <li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="{{route('contactus')}}">Contact Us</a></li>
+        <li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="{{route('aboutus')}}">About Us</a></li>
+        </ul></div>
+     </div>
         <div class="clear"></div>
         </div>
+        <div class="innerbanner">
+            <img src="https://sktthemesdemo.net/newspaper/wp-content/themes/skt-newspaper/images/default-banner.jpg" alt> </div>
         @yield('reader')
         <div id="footer-wrapper">
         <div class="footer">
@@ -201,20 +184,16 @@ jQuery(document).ready(function() {
         <div class="footer-cols widget-column-1">
         <h4>Quick Links</h4>
         <div class="footer-col-3">
-        <div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-156" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-156"><a href="https://sktthemesdemo.net/newspaper/" aria-current="page">Home</a></li>
-        <li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="https://sktthemesdemo.net/newspaper/home-layout-timeline/">Home Layout Timeline</a></li>
-        <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="https://sktthemesdemo.net/newspaper/home-layout-classic/">Home Layout Classic</a></li>
-        <li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="https://sktthemesdemo.net/newspaper/home-layout-masonry/">Home Layout Masonry</a></li>
-        <li id="menu-item-157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-157"><a href="https://sktthemesdemo.net/newspaper/blog-full-width/">Blog Full Width</a></li>
-        <li id="menu-item-158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-158"><a href="https://sktthemesdemo.net/newspaper/blog-left-sidebar/">Blog Left Sidebar</a></li>
-        <li id="menu-item-159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-159"><a href="https://sktthemesdemo.net/newspaper/blog-left-to-right-sidebar/">Blog Left To Right Sidebar</a></li>
-        <li id="menu-item-160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-160"><a href="https://sktthemesdemo.net/newspaper/blog-no-sidebar-2/">Blog No Sidebar</a></li>
-        <li id="menu-item-161" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-161"><a href="https://sktthemesdemo.net/newspaper/blog-right-sidebar/">Blog Right Sidebar</a></li>
-        <li id="menu-item-167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-167"><a href="https://sktthemesdemo.net/newspaper/page-full-width/">Page Full Width</a></li>
-        <li id="menu-item-168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-168"><a href="https://sktthemesdemo.net/newspaper/page-left-sidebar/">Page Left Sidebar</a></li>
-        <li id="menu-item-169" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-169"><a href="https://sktthemesdemo.net/newspaper/page-no-sidebar/">Page No Sidebar</a></li>
-        <li id="menu-item-170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170"><a href="https://sktthemesdemo.net/newspaper/page-right-sidebar/">Page Right Sidebar</a></li>
-        <li id="menu-item-162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-162"><a href="https://sktthemesdemo.net/newspaper/contact-us/">Contact Us</a></li>
+        <div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-156" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-156"><a href="{{route('index')}}" aria-current="page">Home</a></li>
+        <li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="#">Sosial Budaya</a></li>
+        <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="#">Kesehatan</a></li>
+        <li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="#">Politik</a></li>
+        <li id="menu-item-157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-157"><a href="#">Ekonomi</a></li>
+        <li id="menu-item-158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-158"><a href="#">Gametech</a></li>
+        <li id="menu-item-159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-159"><a href="#">Olahraga</a></li>
+        <li id="menu-item-160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-160"><a href="#">Opini</a></li>
+        <li id="menu-item-170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170"><a href="{{route('aboutus')}}">About Us</a></li>
+        <li id="menu-item-162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-162"><a href="{{route('contactus')}}">Contact Us</a></li>
         </ul></div>
         </div>
         </div>
@@ -287,7 +266,7 @@ jQuery(document).ready(function() {
         <div class="clear"></div>
         </div>
         </div>
-        <script type="9ed4e969d7fc7429504fa1ab-text/javascript">
+        <script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript">
             var t = jQuery.noConflict();
             t(document).ready( function() {
                 t('html').css('padding-top','50px');
@@ -342,9 +321,11 @@ jQuery(document).ready(function() {
             function eraseCookie(name) {
                 createCookie(name,"",-1);
             }
-            </script><script type="9ed4e969d7fc7429504fa1ab-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-content/plugins/honeypot/includes/js/wpa.js?ver=2.1" id="wpascript-js"></script>
-        <script type="9ed4e969d7fc7429504fa1ab-text/javascript" id="wpascript-js-after">
-        wpa_field_info = {"wpa_field_name":"pcmzfd8217","wpa_field_value":594828,"wpa_add_test":"no"}
+            </script><script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-content/plugins/honeypot/includes/js/wpa.js?ver=2.1" id="wpascript-js"></script>
+        <script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript" id="wpascript-js-after">
+        wpa_field_info = {"wpa_field_name":"pcmzfd8217","wpa_field_value":329136,"wpa_add_test":"no"}
         </script>
-        <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="9ed4e969d7fc7429504fa1ab-|49" defer></script></body>
+        <script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-content/plugins/master-slider/public/assets/js/jquery.easing.min.js?ver=3.8.7" id="jquery-easing-js"></script>
+        <script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-content/plugins/master-slider/public/assets/js/masterslider.min.js?ver=3.8.7" id="masterslider-core-js"></script>
+        <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="0f9aff8dd9d0fa5cc53b32fe-|49" defer></script></body></body>
 </html>

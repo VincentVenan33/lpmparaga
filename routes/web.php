@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\ReaderController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -59,6 +60,7 @@ Route::get('admin/contact/detail/{id}', [ContactController::class, 'detailcontac
 Route::get('admin/contact/delete/{id}', [ContactController::class, 'deletecontact'])->name('deletecontact')->middleware('auth');
 Route::get('admin/contact/readAll', [ContactController::class, 'readAll'])->name('readAllcontact')->middleware('auth');
 //reader
-// Route::get('reader/detail/{id}', [ContactController::class, 'detailreader'])->name('detailreader');
-// Route::get('reader/abouttus', [ContactController::class, 'aboutus'])->name('aboutus');
-// Route::get('reader/contactus', [ContactController::class, 'contactus'])->name('contactus');
+Route::get('readers/detail', [ReaderController::class, 'detailreader'])->name('detailreader');
+// Route::get('reader/detail/{id}', [ReaderController::class, 'detailreader'])->name('detailreader');
+Route::get('readers/aboutus', [ReaderController::class, 'aboutus'])->name('aboutus');
+Route::get('reader/contactus', [ReaderController::class, 'contactus'])->name('contactus');

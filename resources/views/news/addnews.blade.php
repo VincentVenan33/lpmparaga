@@ -42,8 +42,8 @@
             <label for="foto_url">Images</label><br>
             <div id="preview_images"></div>
             <div class="custom-file">
-                <input type="file" name="foto_url[]" class="custom-file-input @error('foto_url') is-invalid @enderror" id="foto_url" onchange="previewImages(this);" multiple>
-                <label class="custom-file-label" for="foto_url" id="images-label">Choose images</label>
+                <input type="text" name="foto_url[]" class="form-control @error('foto_url') is-invalid @enderror" id="foto_url" multiple readonly>
+                <button type="button" class="btn btn-primary open-modal-relative">Upload Image</button>
                 @error('foto_url')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -63,4 +63,26 @@
     </div>
 </div>
 </div>
+<div class="modal fade" id="fileModal" display: none; aria-hidden="true" style="z-index: 100000 !important;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">File Manager</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body" style="padding:0px; margin:0px; width: 800px;">
+          <iframe width="100%" height="400" src="http://127.0.0.1:8000/responsive_filemanager/filemanager/dialog.php?type=2&field_id=fieldID4&fldr=&crossdomain=1" frameborder="0" style="overflow: scroll; overflow-x: hidden; overflow-y: scroll; "></iframe>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
+@endsection
+@section('addjs')
+<script>
+    $('.open-modal-relative').on('click', function() {
+    $('#fileModal').modal('toggle');
+    $target = $(this).data('target');
+    $(window).on('message', OnMessage1);
+  });
+  </script>
 @endsection
