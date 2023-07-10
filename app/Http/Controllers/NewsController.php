@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GambarModel;
 use App\Models\NewsModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -15,7 +16,7 @@ class NewsController extends Controller
     {
         $data = array();
         $news = NewsModel::select('*')->orderBy('id', 'desc')->paginate(10);
-        $data['title'] = "List news";
+        $data['title'] = "List News";
         $data['news'] = $news;
         return view('news/viewnews', $data);
     }
@@ -30,7 +31,7 @@ class NewsController extends Controller
     public function savenews(Request $request)
     {
         $request->validate([
-            "kat_berita" => "required|min:3",
+            "kat_berita" => "required",
             "judul" => [
                 "required",
                 "min:5",
@@ -38,35 +39,36 @@ class NewsController extends Controller
             ],
             "isi" => "required",
             "excerpt" => "nullable",
-            'foto_url.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'foto.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             "id_admin" => "required",
         ], [
             'judul.unique' => 'Judul sudah ada di database, coba masukkan judul lain.',
         ]);
-
-        $uploadedImages = $request->file('foto_url');
         $filenames = [];
-
-        if ($uploadedImages) {
-            foreach ($uploadedImages as $uploadedImage) {
-                $destinationPath = public_path('responsive_filemanager/filemanager');
-                $filename = $uploadedImage->getClientOriginalName();
-                $uploadedImage->move($destinationPath, $filename);
-                $filenames[] = $filename;
+        if ($request->hasFile('foto')) {
+            foreach ($request->file('foto') as $image) {
+                $filenames[] = $image->getClientOriginalName();
+                $image->storeAs('image/upload', $image->getClientOriginalName(), 'public');
             }
         }
-
 
         $news = NewsModel::create([
             'kat_berita' => $request->kat_berita,
             'judul' => $request->judul,
             'isi' => $request->isi,
             'excerpt' => $request->excerpt,
-            'foto_url' => implode(',', $filenames),
             'id_admin' => $request->id_admin,
         ]);
 
         if ($news) {
+            foreach ($filenames as $filename) {
+                GambarModel::create([
+                    'judul_foto' => $request->judul,
+                    'foto' => $filename,
+                    'id_admin' => $request->id_admin,
+                    'id_news' => $news->id,
+                ]);
+            }
             return redirect()->route('viewnews')->with('message', 'News added successfully');
         } else {
             return redirect()->route('viewnews')->with('error', 'News error to add');
@@ -74,6 +76,7 @@ class NewsController extends Controller
 
         return redirect()->route('viewnews');
     }
+
 
     public function changenews($id)
     {
@@ -89,11 +92,10 @@ class NewsController extends Controller
     public function updatenews(Request $request)
     {
         $request->validate([
-            "kat_berita" => "required|min:3",
+            "kat_berita" => "required",
             "judul" => "required|min:5",
             "isi" => "required",
             "excerpt" => "nullable",
-            'foto_url.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             "id_admin" => "required",
         ]);
 
@@ -103,31 +105,11 @@ class NewsController extends Controller
             return redirect()->route('viewnews')->with('error', 'News not found');
         }
 
-        $uploadedImages = $request->file('foto_url');
-        $filenames = [];
-
-        if ($uploadedImages) {
-            foreach ($uploadedImages as $uploadedImage) {
-                $destinationPath = public_path('responsive_filemanager/filemanager');
-                $filename = $uploadedImage->getClientOriginalName();
-                $uploadedImage->move($destinationPath, $filename);
-                $filenames[] = $filename;
-            }
-        }
-
-        $existingFilenames = explode(',', $news->foto_url);
-        $mergedFilenames = array_merge($existingFilenames, $filenames);
-        $mergedFilenames = array_filter(array_unique($mergedFilenames));
-        $mergedFilenames = implode(',', $mergedFilenames);
-
-        $news->foto_url = $mergedFilenames;
-
-
+        // Update news
         $news->kat_berita = $request->kat_berita;
         $news->judul = $request->judul;
         $news->isi = $request->isi;
         $news->excerpt = $request->excerpt;
-        $news->foto_url = implode(',', $filenames);
         $news->id_admin = $request->id_admin;
 
         if ($news->save()) {
@@ -158,14 +140,6 @@ class NewsController extends Controller
 
         if (!$news) {
             return redirect()->route('viewnews')->with('error', 'News not found');
-        }
-
-        $imagePaths = explode(',', $news->foto_url);
-        foreach ($imagePaths as $imagePath) {
-            $imageFullPath = public_path('image/upload/' . $imagePath);
-            if (file_exists($imageFullPath)) {
-                unlink($imageFullPath);
-            }
         }
 
         $news->delete();

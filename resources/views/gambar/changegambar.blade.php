@@ -4,52 +4,51 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Edit News</h4>
-        <form method="POST" action="{{route('updatenews')}}" class="forms-sample" enctype="multipart/form-data">
+        <h4 class="card-title">Edit Gambar</h4>
+        <form method="POST" action="{{route('updategambar')}}" class="forms-sample" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <input type="hidden" name="id" value="{{$news->id}}">
+            <input type="hidden" name="id" value="{{$gambar->id}}">
         </div>
         <div class="form-group">
-            <label for="kat_berita">Kategori Berita</label>
-            <select name="kat_berita" style="color: black; background: white;" class="form-control @error('kat_berita')is-invalid @enderror">
-                <option value="{{ $news->kat_berita }}">{{ $news->kat_berita }}</option>
-                <option value="Sosial Budaya">Sosial Budaya</option>
-                <option value="Kesehatan">Kesehatan</option>
-                <option value="Politik">Politik</option>
-                <option value="Ekonomi">Ekonomi</option>
-                <option value="Gametech">Gametech</option>
-                <option value="Olahraga">Olahraga</option>
-                <option value="Opini">Opini</option>
-            </select>
-            @error("kat_berita")
+            <label for="judul_foto">Judul Foto</label>
+            <input type="text" name="judul_foto" value="{{ $gambar->judul_foto }}" class="form-control @error('judul_foto')is-invalid @enderror" value="{{old('judul_foto')}}">
+            @error("judul_foto")
             <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
-            <label for="judul">Judul</label>
-            <input type="text" name="judul" value="{{ $news->judul }}" class="form-control @error('judul')is-invalid @enderror" value="{{old('judul')}}">
-            @error("judul")
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-        <div class="form-group">
-            <label for="isi">Isi</label>
-            <input value="{{ $news->isi }}" id="isi" type="hidden" name="isi">
-            <trix-editor class="@error('isi')is-invalid @enderror" input="isi"></trix-editor>
-            @error("isi")
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+            <label for="foto">Images</label><br>
+            <div id="preview_images">
+                @if($gambar->foto)
+                @foreach(explode(',', $gambar->foto) as $image)
+                    <div>
+                    <img src="{{ route('getFile', ['filename' => $image]) }}" alt="{{ $image }}" width="20%" data-filename="{{ $image }}">
+                    <input type="hidden" name="existing_images[]" value="{{ $image }}">
+                    <i class="fas fa-trash cancel-icon remove-image ml-4" title="Remove Gambar"></i>
+                    <p>{{ $image }}</p>
+                    </div>
+                @endforeach
+                @endif
+            </div>
+            <div class="custom-file">
+                <input type="file" name="foto[]" class="custom-file-input @error('foto') is-invalid @enderror" id="foto" onchange="previewImages(this);" multiple>
+                <label class="custom-file-label" for="foto" id="images-label">Choose images</label>
+                @error('foto')
+                <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+                <input type="text">
+            </div>
         </div>
         <div class="form-group">
             <label for="id_admin">id_admin</label>
-            <input value="{{ $news->id_admin }}" type="id_admin" name="id_admin" class="form-control @error('id_admin')is-invalid @enderror" value="{{old('id_admin')}}">
+            <input value="{{ $gambar->id_admin }}" type="id_admin" name="id_admin" class="form-control @error('id_admin')is-invalid @enderror" value="{{old('id_admin')}}">
             @error("id_admin")
             <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
         <button type="submit" class="btn btn-primary mr-2"><i class="ti-save"></i>&nbsp; Save</button>
-        <a class="btn btn-light text-black text-decoration-none" href="{{route('viewnews')}}"><i class="ti-angle-double-left"></i>&nbsp; Cancel</a>
+        <a class="btn btn-light text-black text-decoration-none" href="{{route('viewgambar')}}"><i class="ti-angle-double-left"></i>&nbsp; Cancel</a>
         </form>
     </div>
     </div>
@@ -57,7 +56,7 @@
 </div>
 @endsection
 
-{{-- <script>
+<script>
   function previewImages(input) {
     var preview = document.getElementById('preview_images');
     var files = input.files;
@@ -118,4 +117,4 @@
       div.parentNode.removeChild(div);
     }
   });
-</script> --}}
+</script>

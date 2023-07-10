@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GambarController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewsController;
@@ -52,8 +53,15 @@ Route::get('admin/news/change/{id}', [NewsController::class, 'changenews'])->nam
 Route::post('admin/news/update', [NewsController::class, 'updatenews'])->name('updatenews')->middleware('auth');
 Route::get('admin/news/detail/{id}', [NewsController::class, 'detailnews'])->name('detailnews')->middleware('auth');
 Route::get('admin/news/delete/{id}', [NewsController::class, 'deletenews'])->name('deletenews')->middleware('auth');
-Route::get('admin/file/{filename}', [NewsController::class, 'getFile'])->name('getFile')->middleware('auth');
-Route::get('admin/list-files', [NewsController::class, 'getListFiles'])->name('getListFiles')->middleware('auth');
+Route::get('/file/{filename}', [NewsController::class, 'getFile'])->name('getFile')->middleware('auth');
+//gambar
+Route::get('admin/gambar/view', [GambarController::class, 'viewgambar'])->name('viewgambar')->middleware('auth');
+Route::get('admin/gambar/add', [GambarController::class, 'addgambar'])->name('addgambar')->middleware('auth');
+Route::post('admin/gambar/save', [GambarController::class, 'savegambar'])->name('savegambar')->middleware('auth');
+Route::get('admin/gambar/change/{id}', [GambarController::class, 'changegambar'])->name('changegambar')->middleware('auth');
+Route::post('admin/gambar/update', [GambarController::class, 'updategambar'])->name('updategambar')->middleware('auth');
+Route::get('admin/gambar/detail/{id}', [GambarController::class, 'detailgambar'])->name('detailgambar')->middleware('auth');
+Route::get('admin/gambar/delete/{id}', [GambarController::class, 'deletegambar'])->name('deletegambar')->middleware('auth');
 //contact
 Route::get('admin/contact/view', [ContactController::class, 'viewcontact'])->name('viewcontact')->middleware('auth');
 Route::get('admin/contact/detail/{id}', [ContactController::class, 'detailcontact'])->name('detailcontact')->middleware('auth');

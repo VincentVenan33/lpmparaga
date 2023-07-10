@@ -24,6 +24,7 @@
   <link rel="stylesheet" type="text/css"
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     {{-- <link rel="stylesheet" href="{{  url('') }}/responsive_filemanager/filemanager/css/style.css"> --}}
 </head>
 <body>
   <div class="container-scroller">
@@ -108,6 +109,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('viewgambar')}}">
+              <i class="icon-image menu-icon"></i>
+              <span class="menu-title">Gambar</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route('viewcontact')}}">
               <i class="ti-email menu-icon"></i>
               <span class="menu-title">Message</span>
@@ -165,6 +172,9 @@
   <script src="{{  url('') }}/js/hoverable-collapse.js"></script>
   <script src="{{  url('') }}/js/settings.js"></script>
   <script src="{{  url('') }}/js/todolist.js"></script>
+  {{-- <script src="{{  url('') }}/responsive_filemanager/filemanager/js/jquery.fileupload.js"></script>
+  <script src="{{  url('') }}/responsive_filemanager/filemanager/js/include.js"></script>
+  <script src="{{  url('') }}/responsive_filemanager/filemanager/js/jquery.fileupload-ui.js"></script> --}}
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="{{  url('') }}/js/dashboard.js"></script>

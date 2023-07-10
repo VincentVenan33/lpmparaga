@@ -21,15 +21,6 @@
         </div>
         <div class="form-group">
         <label for="foto_url">Images</label><br>
-        <div id="preview_images">
-            @if($news->foto_url)
-            @foreach(explode(',', $news->foto_url) as $image)
-                <img src="{{ route('getFile', ['filename' => $image]) }}" alt="{{ $image }}" width="20%">
-                <input type="hidden" name="existing_images[]" value="{{ $image }}">
-                <p>{{ $image }}</p>
-            @endforeach
-            @endif
-        </div>
         </div>
         <div class="form-group">
         <label for="id_admin">id_admin</label>
