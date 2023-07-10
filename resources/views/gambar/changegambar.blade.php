@@ -18,30 +18,30 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="foto">Images</label><br>
-            <div id="preview_images">
-                @if($gambar->foto)
-                @foreach(explode(',', $gambar->foto) as $image)
-                    <div>
-                    <img src="{{ route('getFile', ['filename' => $image]) }}" alt="{{ $image }}" width="20%" data-filename="{{ $image }}">
-                    <input type="hidden" name="existing_images[]" value="{{ $image }}">
-                    <i class="fas fa-trash cancel-icon remove-image ml-4" title="Remove Gambar"></i>
-                    <p>{{ $image }}</p>
-                    </div>
-                @endforeach
-                @endif
-            </div>
-            <div class="custom-file">
-                <input type="file" name="foto[]" class="custom-file-input @error('foto') is-invalid @enderror" id="foto" onchange="previewImages(this);" multiple>
-                <label class="custom-file-label" for="foto" id="images-label">Choose images</label>
-                @error('foto')
-                <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-                <input type="text">
-            </div>
+            <label for="id_news">ID News</label>
+            <input value="{{ $gambar->id_news }}" type="id_news" name="id_news" class="form-control @error('id_news')is-invalid @enderror" value="{{old('id_news')}}">
+            @error("id_news")
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
-            <label for="id_admin">id_admin</label>
+            <label for="inputfoto">Foto</label><br>
+            @if ($gambar->foto)
+                <img id="preview_foto" width="20%" src="{{ route('getFile', ['filename' => $gambar->foto]) }}" alt="Preview foto">
+            @else
+                <img id="preview_foto" width="20%" src="#" alt="Preview foto" style="display:none;">
+            @endif
+            <div class="custom-file">
+                <input type="file" name="newfoto" value="" class="custom-file-input" id="foto" onchange="previewfoto(this);">
+                <input type="hidden" name="foto" value="{{$gambar->foto}}" class="form-control">
+                <label class="custom-file-label" for="foto">{{$gambar->foto ? basename($gambar->foto) : 'Choose file'}}</label>
+            </div>
+            @if ($gambar->foto && $errors->has('newfoto'))
+                <div class="invalid-feedback">{{ $errors->first('newfoto') }}</div>
+            @endif
+        </div>
+        <div class="form-group">
+            <label for="id_admin">ID Admin</label>
             <input value="{{ $gambar->id_admin }}" type="id_admin" name="id_admin" class="form-control @error('id_admin')is-invalid @enderror" value="{{old('id_admin')}}">
             @error("id_admin")
             <div class="invalid-feedback">{{ $message }}</div>
@@ -54,67 +54,26 @@
     </div>
 </div>
 </div>
-@endsection
-
 <script>
-  function previewImages(input) {
-    var preview = document.getElementById('preview_images');
-    var files = input.files;
-
-    preview.innerHTML = '';
-
-    function readAndPreview(file) {
-      if (/\.(jpe?g|png|gif|bmp)$/i.test(file.name)) {
+    function previewfoto(input) {
+    if (input.files && input.files[0]) {
         var reader = new FileReader();
 
-        reader.addEventListener('load', function() {
-          var image = new Image();
-          image.height = 100;
-          image.width = 100;
-          image.title = file.name;
-          image.src = this.result;
+        reader.onload = function(e) {
+            $('#preview_foto')
+                .attr('src', e.target.result)
+                .show();
+        };
 
-          var div = document.createElement('div');
-          div.appendChild(image);
+        reader.readAsDataURL(input.files[0]);
 
-          var input = document.createElement('input');
-          input.type = 'hidden';
-          input.name = 'new_images[]';
-          input.value = file.name;
-
-          var removeButton = document.createElement('i');
-          removeButton.classList.add('fas', 'fa-trash', 'cancel-icon', 'remove-image');
-          removeButton.setAttribute('title', 'Remove Gambar');
-          removeButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            var div = this.parentElement;
-            div.parentNode.removeChild(div);
-          });
-
-          var removeButtonContainer = document.createElement('div');
-          removeButtonContainer.classList.add('remove-button-container');
-          removeButtonContainer.appendChild(removeButton);
-
-          div.appendChild(input);
-          div.appendChild(removeButtonContainer);
-
-          preview.appendChild(div);
-        });
-
-        reader.readAsDataURL(file);
-      }
+        // Set the file name as the label text
+        var fileName = input.files[0].name;
+        $('.custom-file-label').text(fileName);
+    } else {
+        $('#preview_foto').attr('src', '#').hide();
+        $('.custom-file-label').text('Choose file');
     }
-
-    if (files) {
-      Array.prototype.forEach.call(files, readAndPreview);
-    }
-  }
-
-  document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('remove-image')) {
-      e.preventDefault();
-      var div = e.target.parentElement;
-      div.parentNode.removeChild(div);
-    }
-  });
+}
 </script>
+@endsection

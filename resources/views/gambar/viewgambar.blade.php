@@ -17,13 +17,13 @@
                             Judul Foto
                             </th>
                             <th>
-                            id news
+                            ID News
                             </th>
                             <th style="text-align: center">
                             Foto
                             </th>
                             <th>
-                            Admin
+                            ID Admin
                             </th>
                             <th class="text-center">
                             Action

@@ -23,7 +23,7 @@
                             Isi
                             </th>
                             <th>
-                            Admin
+                            ID Admin
                             </th>
                             <th class="text-center">
                             Action

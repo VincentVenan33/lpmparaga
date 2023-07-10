@@ -14,7 +14,7 @@ class LoginController extends Controller
         if (Auth::check()) {
             return redirect('dashboard');
         } else {
-            return view('login');
+            return view('admin/login');
         }
     }
 
@@ -35,20 +35,20 @@ class LoginController extends Controller
 
         if ($user->status == 0) {
             Auth::logout();
-            return redirect('login')->with('error', 'Akun Nonaktif!');
+            return redirect('admin/login')->with('error', 'Akun Nonaktif!');
         }
 
         $request->session()->regenerate();
 
         $message = 'Selamat datang, ' . $user->name . '!';
-        return redirect('dashboard')->with('message', $message);
+        return redirect('admin/dashboard')->with('message', $message);
     } else {
         $user = UsersModel::where('email', $request->input('email'))->first();
 
         if ($user) {
-            return redirect('login')->with('error', 'Password Salah!');
+            return redirect('admin/login')->with('error', 'Password Salah!');
         } else {
-            return redirect('login')->with('error', 'Email Salah!');
+            return redirect('admin/login')->with('error', 'Email Salah!');
         }
     }
 }
@@ -60,6 +60,6 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('login')->with('message','Berhasil Logout!');
+        return redirect('admin/login')->with('message','Berhasil Logout!');
     }
 }

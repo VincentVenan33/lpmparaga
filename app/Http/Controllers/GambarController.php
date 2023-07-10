@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests\FotoRequest;
 use App\Http\Requests\GambarRequest;
 use App\Models\GambarModel;
+use App\Models\NewsModel;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 
 class GambarController extends Controller
 {
@@ -45,17 +47,52 @@ class GambarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GambarRequest $request)
+    public function savegambar(Request $request)
     {
-        $data = $request->all();
+        $request->validate([
+            "judul_foto" => [
+                "required",
+                "min:5",
+                Rule::unique('news', 'judul'),
+            ],
+            'id_news' => [
+                'required',
+                function ($attribute, $value, $fail) {
+                    $news = NewsModel::find($value);
+                    if (!$news) {
+                        $fail('ID News tidak valid.');
+                    }
+                },
+            ],
+            'foto.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            "id_admin" => "required",
+        ], [
+            'judul_foto.unique' => 'Judul sudah ada di database, coba masukkan judul lain.',
+        ]);
 
-        if($request->file('foto')){
-            $data['foto'] = $request->file('foto')->store('assets/foto', 'public');
+        $news = NewsModel::find($request->id_news);
+
+        if ($request->hasFile('foto')) {
+            $filenames = [];
+            foreach ($request->file('foto') as $image) {
+                $filename = $image->getClientOriginalName();
+                $image->storeAs('image/upload', $filename, 'public');
+                $filenames[] = $filename;
+            }
+
+            foreach ($filenames as $filename) {
+                GambarModel::create([
+                    'judul_foto' => $request->judul_foto,
+                    'foto' => $filename,
+                    'id_admin' => $request->id_admin,
+                    'id_news' => $news->id,
+                ]);
+            }
+
+            return redirect()->route('viewgambar')->with('message', 'Gambar added successfully');
         }
 
-        GambarModel::create($data);
-
-        return redirect()->route('gambar/viewgambar');
+        return redirect()->route('viewgambar')->with('error', 'Gambar error to add')->withErrors(['foto' => 'Gagal menambahkan gambar. Silakan coba lagi.']);
     }
 
     public function changegambar($id)
@@ -76,34 +113,59 @@ class GambarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, GambarModel $gambar)
+    public function updategambar(Request $request)
     {
-        $data = $request->all();
-
-        Validator([
-            'id_admin' => [
-                'required',
+        $request->validate([
+            "judul_foto" => [
+                "required",
+                "min:5",
+                Rule::unique('news', 'judul')->ignore($request->id_news),
             ],
-            'id_berita' => [
+            'id_news' => [
                 'required',
+                function ($attribute, $value, $fail) {
+                    $news = NewsModel::find($value);
+                    if (!$news) {
+                        $fail('ID News tidak valid.');
+                    }
+                },
             ],
+            'newfoto' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            "id_admin" => "required",
+        ], [
+            'judul_foto.unique' => 'Judul sudah ada di database, coba masukkan judul lain.',
         ]);
 
+        $gambar = GambarModel::find($request->id);
 
-        if($request->file('foto')){
-            $data['foto'] = $request->file('foto')->store('assets/foto', 'public');
-
-            //remove URL/storage from getAttribute model foto
-            $temp = URL::to('/')."/storage/";
-            $temp1 = Str::remove($temp, $gambar['foto_url']);
-            //delete photo
-            Storage::disk('public')->delete($temp1);
+        if (!$gambar) {
+            return redirect()->route('viewgambar')->with('error', 'Gambar tidak ditemukan');
         }
 
-        $gambar->update($data);
+        $gambar->judul_foto = $request->judul_foto;
+        $gambar->id_news = $request->id_news;
+        $gambar->id_admin = $request->id_admin;
 
-        return redirect()->route('gambar/viewgambar');
+        if ($request->hasFile('newfoto')) {
+            $fotoLama = $gambar->foto;
+
+            // Hapus foto lama dari penyimpanan
+            Storage::disk('public')->delete('image/upload/' . $fotoLama);
+
+            // Upload foto baru
+            $fotoBaru = $request->file('newfoto');
+            $namaFotoBaru = $fotoBaru->getClientOriginalName();
+            $fotoBaru->storeAs('image/upload', $namaFotoBaru, 'public');
+
+            // Simpan nama foto baru
+            $gambar->foto = $namaFotoBaru;
+        }
+
+        $gambar->save();
+
+        return redirect()->route('viewgambar')->with('message', 'Gambar updated successfully');
     }
+
 
     public function detailgambar($id)
     {
@@ -126,10 +188,16 @@ class GambarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(GambarModel $gambar)
+    public function deletegambar($id)
     {
+        $gambar = GambarModel::find($id);
+
+        // Menghapus file foto dari penyimpanan
+        Storage::disk('public')->delete('image/upload/' . $gambar->foto);
+
+        // Menghapus data gambar dari database
         $gambar->delete();
 
-        return redirect()->route('gambar/viewgambar');
+        return redirect()->route('viewgambar')->with('message', 'Gambar deleted successfully');
     }
 }

@@ -28968,6 +28968,10 @@ font-size: small;
     border-radius: 0 !important;
 }
 
+.custom-file{
+    margin-top: 10px;
+}
+
 /* style for off-canvas menu*/
 @media screen and (max-width: 991px) {
   .sidebar-offcanvas {

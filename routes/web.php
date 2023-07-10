@@ -25,9 +25,9 @@ $currentRoute = Route::currentRouteName();
 
 //dashboard
 Route::get('/', [HomeController::class, 'readers'])->name('index');
-Route::get('dashboard', [HomeController::class, 'home'])->name('dashboard')->middleware('auth');
+Route::get('admin/dashboard', [HomeController::class, 'home'])->name('dashboard')->middleware('auth');
 //login
-Route::get('login', function () {
+Route::get('admin/login', function () {
     $data = array();
     $data['title'] = "Login";
     return view('login', $data);
