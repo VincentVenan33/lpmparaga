@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LPM || {{ $title }}</title>
+    <title>Paranews || {{ $title }}</title>
     <meta name="robots" content="noindex, nofollow" />
 <link rel="dns-prefetch" href="//fonts.bunny.net" />
 <link rel="stylesheet" id="wp-block-library-css" href="https://sktthemesdemo.net/newspaper/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1" type="text/css" media="all" />
@@ -15,6 +15,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 :where(.wp-block-columns.is-layout-flex){gap: 2em;}
 .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="{{  url('') }}/css/card.css">
 <link rel="shortcut icon" href="{{  url('') }}/images/Copy of Paraga HD png bg SQUARE.png" />
 <link rel="stylesheet" id="wpa-css-css" href="{{  url('') }}/css/readers/wpa.css" type="text/css" media="all" />

@@ -2,24 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GambarModel;
+use App\Models\NewsModel;
 use App\Models\PengunjungModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
-    public function home(){
+    public function home()
+    {
         $pengunjung_data =  PengunjungModel::select(DB::raw('count(*) as count'), DB::raw('date(created_at)as date'))
-        ->groupby('date')
-        ->get();
+            ->groupby('date')
+            ->get();
         $cdate = [];
         $ccount = [];
-        foreach($pengunjung_data as $visitor){
+        foreach ($pengunjung_data as $visitor) {
             $cdate[] = $visitor->date;
             $ccount[] = $visitor->count;
         }
         $result = PengunjungModel::select('t.day', DB::raw('COUNT(s.id) as total_users'))
-        ->from(DB::raw('(
+            ->from(DB::raw('(
             SELECT CURDATE() - INTERVAL 6 DAY AS day UNION ALL
             SELECT CURDATE() - INTERVAL 5 DAY AS day UNION ALL
             SELECT CURDATE() - INTERVAL 4 DAY AS day UNION ALL
@@ -40,8 +44,8 @@ class HomeController extends Controller
         $title = "Dashboard";
         return view('index', [
             'index' => $result,
-            'chartcount'=> $ccount,
-            'chartdate'=> $cdate,
+            'chartcount' => $ccount,
+            'chartdate' => $cdate,
             'totalMonthlyVisitors' => $totalMonthlyVisitors,
             'totalOnline' => $totalOnline,
             'title' => $title,
@@ -49,9 +53,12 @@ class HomeController extends Controller
     }
     public function readers()
     {
-        $title = "Home";
-        return view('readers/readers', [
-            'title' => $title,
-        ]);
+        $data = array();
+        // $news = NewsModel::select('*')->orderBy('id', 'desc')->paginate(10);
+        $news = NewsModel::with('gambar')->orderBy('id', 'desc')->paginate(10);
+        $data['title'] = "Home";
+        $data['news'] = $news;
+
+        return view('readers/readers', $data);
     }
 }
