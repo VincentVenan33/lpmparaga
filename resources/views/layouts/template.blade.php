@@ -229,29 +229,36 @@
     @endif
   </script>
   <script>
-        function tampilkanTanggalWaktu() {
-            var sekarang = new Date();
-            var tanggal = sekarang.getDate() + ' ' + bulanIndonesia(sekarang.getMonth()) + ' ' + sekarang.getFullYear();
-            var jam = formatAngka(sekarang.getHours());
-            var menit = formatAngka(sekarang.getMinutes());
-            var detik = formatAngka(sekarang.getSeconds());
-            var waktu = jam + ':' + menit + ':' + detik;
-            document.getElementById('datetime').innerHTML = tanggal + ' ' + waktu;
-        }
+  function tampilkanTanggalWaktu() {
+    var sekarang = new Date();
+    var hari = sekarang.getDay();
+    var namaHari = hariIndonesia(hari);
+    var tanggal = sekarang.getDate() + ' ' + bulanIndonesia(sekarang.getMonth()) + ' ' + sekarang.getFullYear();
+    var jam = formatAngka(sekarang.getHours());
+    var menit = formatAngka(sekarang.getMinutes());
+    var detik = formatAngka(sekarang.getSeconds());
+    var waktu = jam + ':' + menit + ':' + detik;
+    document.getElementById('datetime').innerHTML = namaHari + ', ' + tanggal + ' ' + waktu;
+}
 
-        function bulanIndonesia(bulan) {
-            var namaBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-            return namaBulan[bulan];
-        }
+    function hariIndonesia(hari) {
+    var namaHari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    return namaHari[hari];
+}
 
-        function formatAngka(angka) {
-            return angka < 10 ? '0' + angka : angka;
-        }
+    function bulanIndonesia(bulan) {
+    var namaBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+    return namaBulan[bulan];
+}
 
-        if (window.location.pathname === '/dashboard') {
+    function formatAngka(angka) {
+    return angka < 10 ? '0' + angka : angka;
+}
+
+    if (window.location.pathname === '/admin/dashboard') {
     tampilkanTanggalWaktu();
     setInterval(tampilkanTanggalWaktu, 1000);
-  }
+}
     </script>
     <script>
         var currentUrl = "{{ url()->current() }}";
@@ -345,7 +352,6 @@
                 e.preventDefault();
             })
         </script>
-    @yield('addjs')
 </body>
 
 </html>

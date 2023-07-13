@@ -48,8 +48,9 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <script type="9ed4e969d7fc7429504fa1ab-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-content/themes/skt-newspaper/thumbnailslider/js/pgwslideshow.js?ver=6.1.1" id="skt-newspaper-owljsyy-js"></script>
 <script type="9ed4e969d7fc7429504fa1ab-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-content/plugins/themebar/js/jquery.cookie.js?ver=6.1.1" id="ns_cookiescript-js"></script>
 <script type="9ed4e969d7fc7429504fa1ab-text/javascript">var ms_grabbing_curosr = 'https://sktthemesdemo.net/newspaper/wp-content/plugins/master-slider/public/assets/css/common/grabbing.cur', ms_grab_curosr = 'https://sktthemesdemo.net/newspaper/wp-content/plugins/master-slider/public/assets/css/common/grab.cur';</script>
+<script type="c1abf99a381a9dea68f803e5-text/javascript">var ms_grabbing_curosr = 'https://sktthemesdemo.net/newspaper/wp-content/plugins/master-slider/public/assets/css/common/grabbing.cur', ms_grab_curosr = 'https://sktthemesdemo.net/newspaper/wp-content/plugins/master-slider/public/assets/css/common/grab.cur';</script>
 <meta name="generator" content="MasterSlider 3.8.7 - Responsive Touch Image Slider | avt.li/msf" />
-<style>body{font-family:Arimo; font-size:13px; color:#000000 }.copyright-wrapper a {color:#000000 !important}.postlist2 h6 {font-family:Arimo;}.logo h2{font-family:Roboto;color:#111111;font-size:35px}.logo h2 span{color:#ff7f00;}.logo .tagline{color:#333333;}.header{background-color:#ffffff; color:#333333}.headline span{background-color:#ff7f00; color:#ffffff;}.headline span:before{border-left:15px solid #ff7f00;}.news-ticker p{ color:#ffffff;}.header-top{background-color:#272727; }.searchbox-icon, .searchbox-submit{background-color:#ff7f00; color:#ffffff; }.nav, .nav ul li ul li a:hover, .nav ul li.current_page_item ul li a, .nav ul li.menu-item-has-children:hover ul li a, .nav ul li.menu-item-has-children:hover ul li.menu-item-has-children:hover li a {background-color:#272727}.nav ul li a{font-family:'Roboto', sans-serif;font-size:15px}.nav ul li a, .nav ul li ul li a{color:#ffffff;}.nav ul li a:hover, .nav ul li.current_page_item a, .nav ul li.current_page_item ul li a:hover, .nav ul li:hover ul li a:hover, .nav ul li.menu-item-has-children:hover a, .nav ul li.menu-item-has-children:hover ul li.menu-item-has-children:hover a, .nav ul li.menu-item-has-children:hover ul li.menu-item-has-children:hover li a:hover, .nav ul li.menu-item-has-children:hover ul li.current_page_item a, .nav ul li.menu-item-has-children:hover ul li.menu-item-has-children:hover ul li.current_page_item a, .nav ul li.current_page_ancestor a, .nav ul li.current_page_ancestor ul li.current_page_ancestor a {background-color:#ff7f00; color:#ffffff;}.cat-title, .category-box .thumb, .tab-content-post .tabs-wrapper ul.tabs li a.selected, .pgwSlideshow .ps-current span.ps-next, .pgwSlideshow .ps-list li, .nav li:last-child, .current-menu-parent{background-color:#ff7f00;}.nav li ul li:hover a, .nav li:hover ul li.current_page_item a, .nav ul li:hover ul li a {background-color:#272727; }.nav ul li { border-color:#404040;}.nav li ul li { border-color:#404040;}.search-form input[type='search'], #sidebar .woocommerce-product-search .search-field{background-color:#ece8e8; color:#717171;}.slidesection h3{background-color:rgba(0,0,0,0.6); color:#ffffff;}#owl-demo .CarouselThumb h6{color:#ffffff;}.PostMeta, .PostMeta a{color:#828181;}.catbx{background-color:#ff7f00}.owl-prev, .owl-next {background-color:#ff7f00}.articles li{ border-color:#e8e8e8;}.articles .thumb { background-color:#ff7f00;}.articles li:hover h6 { color:#ff7f00;}h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{ color:#464545;}h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover{ color:#ff7f00;}.counter a{background-color:#888787; color:#ffffff;}.counter a:hover{background-color:#ff7f00; color:#ffffff;}a{color:#ff7f00;}a:hover{color:#135495;}.footer-cols ul li a, .phone-no a, .footer-cols ul li.icon:before{color:#cacaca;}.copyright-wrapper a:hover, .phone-no a:hover{color:#ff7f00;}.footer-cols h4{font-size:22px; color:#f9f8f8}h2.section-title{font-size:24px; color:#ffffff}.postlist h6 a:hover, #owl-demo .CarouselThumb h6:hover, #owl-demo .owl-controls .owl-dots .owl-dot.active span{color:#ff7f00;}.morebtn{background-color:#fda32f; color:#ffffff;}.wp-block-search__button{background-color:#fda32f !important; color:#ffffff !important;}.morebtn:hover{background-color:#ff7f00; color:#ffffff;}.wp-block-search__button:hover{background-color:#ff7f00 !important; color:#ffffff !important;}.logo img{height:75px;}#timeline .monthyear, #timeline .tdata::after{background-color:#eaeaea; }#timeline{border-color:#eaeaea; }#recentpost-2-cols .column-2{border-color:#e8e6e6; }#classiclayout .layoutfull .thumboxfix, #recentpost-2-cols .column-2 .thumbx, #timeline .pstlist .thumbxxx, .catThumb{background-color:#dedede; }#thumbnailview .thumbview, .gridlist, .catleft-1, .catwrapslider{background-color:#000000; }.toggle a{background-color:#3e3e3e; color:#ffffff;}h3.widget-title{color:#363636; border-color:#edecec;}#footer-wrapper{background-color:#272727; border-color:1; color:#8e8d8d;}.footer-cols .social-icon a{background-color:#000000; color:#ffffff;}.footer-cols .social-icon a:hover{background-color:#ff7f00; color:#ffffff;}h5{border-color:#e8e6e6;}.footer-cols ul li {border-color:#454545;}.search-form input[type=submit], #commentform input#submit, button, html input[type="button"], input[type="reset"], input[type="submit"]{background:#ff7f00;}#commentform input#submit:hover, button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover{background:#131313;}.copyright-wrapper{background-color:#ff7f00; ; color:#ffffff;}.pagination ul li span, .pagination ul li a{background:#323232;}.pagination ul li .current, .pagination ul li a:hover{background:#ff7f00;}h1{font-family:Roboto; font-size:30px; color:#464545;}h2{font-family:Roboto; font-size:28px; color:#464545;}h3{font-family:Roboto; font-size:26px; color:#464545;}h4{font-family:Roboto; font-size:24px; color:#464545;}h5{font-family:Roboto; font-size:18px; color:#464545;}h6{font-family:Roboto; font-size:15px; color:#363636;}.tab-content-post .tabs-wrapper ul.tabs li a{font-family:Roboto; font-size:15px; color:#363636;}</style> <script type="9ed4e969d7fc7429504fa1ab-text/javascript">
+<style>body{font-family:Arimo; font-size:13px; color:#000000 }.copyright-wrapper a {color:#000000 !important}.postlist2 h6 {font-family:Arimo;}.logo h2{font-family:Roboto;color:#111111;font-size:35px}.logo h2 span{color:#ff7f00;}.logo .tagline{color:#333333;}.header{background-color:#ffffff; color:#333333}.headline span{background-color:#ff7f00; color:#ffffff;}.headline span:before{border-left:15px solid #ff7f00;}.news-ticker p{ color:#ffffff;}.header-top{background-color:#272727; }.searchbox-icon, .searchbox-submit{background-color:#ff7f00; color:#ffffff; }.nav, .nav ul li ul li a:hover, .nav ul li.current_page_item ul li a, .nav ul li.menu-item-has-children:hover ul li a, .nav ul li.menu-item-has-children:hover ul li.menu-item-has-children:hover li a {background-color:#272727}.nav ul li a{font-family:'Roboto', sans-serif;font-size:15px}.nav ul li a, .nav ul li ul li a{color:#ffffff;}.nav ul li a:hover, .nav ul li.current_page_item a, .nav ul li.current_page_item ul li a:hover, .nav ul li:hover ul li a:hover, .nav ul li.menu-item-has-children:hover a, .nav ul li.menu-item-has-children:hover ul li.menu-item-has-children:hover a, .nav ul li.menu-item-has-children:hover ul li.menu-item-has-children:hover li a:hover, .nav ul li.menu-item-has-children:hover ul li.current_page_item a, .nav ul li.menu-item-has-children:hover ul li.menu-item-has-children:hover ul li.current_page_item a, .nav ul li.current_page_ancestor a, .nav ul li.current_page_ancestor ul li.current_page_ancestor a {background-color:#ff7f00; color:#ffffff;}.cat-title, .category-box .thumb, .tab-content-post .tabs-wrapper ul.tabs li a.selected, .pgwSlideshow .ps-current span.ps-next, .pgwSlideshow .ps-list li, .nav li:last-child, .current-menu-parent{background-color:#ff7f00;}.nav li ul li:hover a, .nav li:hover ul li.current_page_item a, .nav ul li:hover ul li a {background-color:#272727; }.nav ul li { border-color:#404040;}.nav li ul li { border-color:#404040;}.search-form input[type='search'], #sidebar .woocommerce-product-search .search-field{background-color:#ece8e8; color:#717171;}.slidesection h3{background-color:rgba(0,0,0,0.6); color:#ffffff;}#owl-demo .CarouselThumb h6{color:#ffffff;}.PostMeta, .PostMeta a{color:#828181;}.catbx{background-color:#ff7f00}.owl-prev, .owl-next {background-color:#ff7f00}.articles li{ border-color:#e8e8e8;}.articles .thumb { background-color:#ff7f00;}.articles li:hover h6 { color:#ff7f00;}h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{ color:#464545;}h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover{ color:#ff7f00;}.counter a{background-color:#888787; color:#ffffff;}.counter a:hover{background-color:#ff7f00; color:#ffffff;}a{color:#ff7f00;}a:hover{color:#135495;}.footer-cols ul li a, .phone-no a, .footer-cols ul li.icon:before{color:#cacaca;}.copyright-wrapper a:hover, .phone-no a:hover{color:#ff7f00;}.footer-cols h4{font-size:22px; color:#f9f8f8}h2.section-title{font-size:24px; color:#ffffff}.postlist h6 a:hover, #owl-demo .CarouselThumb h6:hover, #owl-demo .owl-controls .owl-dots .owl-dot.active span{color:#ff7f00;}.morebtn{background-color:#fda32f; color:#ffffff;}.wp-block-search__button{background-color:#fda32f !important; color:#ffffff !important;}.morebtn:hover{background-color:#ff7f00; color:#ffffff;}.wp-block-search__button:hover{background-color:#ff7f00 !important; color:#ffffff !important;}.logo img{height:75px;}#timeline .monthyear, #timeline .tdata::after{background-color:#eaeaea; }#timeline{border-color:#eaeaea; }#recentpost-2-cols .column-2{border-color:#e8e6e6; }#classiclayout .layoutfull .thumboxfix, #recentpost-2-cols .column-2 .thumbx, #timeline .pstlist .thumbxxx, .catThumb{background-color:#dedede; }#thumbnailview .thumbview, .gridlist, .catleft-1, .catwrapslider{background-color:#000000; }.toggle a{background-color:#3e3e3e; color:#ffffff;}h3.widget-title{color:#363636; border-color:#edecec;}#footer-wrapper{background-color:#272727; border-color:1; color:#8e8d8d;}.footer-cols .social-icon a{background-color:#000000; color:#ffffff;}.footer-cols .social-icon a:hover{background-color:#ff7f00; color:#ffffff;}h5{border-color:#e8e6e6;}.footer-cols ul li {border-color:#454545;}.search-form input[type=submit], #commentform input#submit, button, html input[type="button"], input[type="reset"], input[type="submit"]{background:#ff7f00;}#commentform input#submit:hover, button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover{background:#131313;}.copyright-wrapper{background-color:#ff7f00; ; color:#ffffff;}.pagination ul li span, .pagination ul li a{background:#323232;}.pagination ul li .current, .pagination ul li a:hover{background:#ff7f00;}h1{font-family:Roboto; font-size:30px; color:#464545;}h2{font-family:Roboto; font-size:28px; color:#464545;}h3{font-family:Roboto; font-size:26px; color:#464545;}h4{font-family:Roboto; font-size:24px; color:#464545;}h5{font-family:Roboto; font-size:18px; color:#464545;}h6{font-family:Roboto; font-size:15px; color:#363636;}.tab-content-post .tabs-wrapper ul.tabs li a{font-family:Roboto; font-size:15px; color:#363636;}</style> <script type="c1abf99a381a9dea68f803e5-text/javascript">
     jQuery(document).ready(function() {
         jQuery("#header-bottom-shape").click(function(){
             if ( jQuery( ".show_hide_header" ).is( ":hidden" ) ) {
@@ -62,7 +63,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         jQuery( "#site-nav li:last" ).addClass("noBottomBorder");
         jQuery( "#site-nav li:parent" ).find('ul.sub-menu').parent().addClass("haschild");
     });
-	</script><script type="9ed4e969d7fc7429504fa1ab-text/javascript">
+	</script><script type="c1abf99a381a9dea68f803e5-text/javascript">
 	jQuery(document).ready(function() {
 	jQuery('.pgwSlideshow').pgwSlideshow({
 	transitionDuration: 500,
@@ -233,9 +234,22 @@ jQuery(document).ready(function() {
         <div class="copyright-txt">Copyright 2023 All Rights Reserved By: <a href="https://www.instagram.com/paraga_unika/" target="_blank"> Paraga SCU</a></div>
         <div class="design-by">Design by LPM PARAGA SCU</div>
         </div>
+        <div>
+        </div>
         <div class="clear"></div>
-        </div>
-        </div>
+    </div>
+</div>
+<button onclick="scrollToTop()" class="scroll-to-top">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+  </button>
+  <script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
         <script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript">
             var t = jQuery.noConflict();
             t(document).ready( function() {
@@ -337,10 +351,52 @@ jQuery(document).ready(function() {
             toastr.warning("{{ session('warning') }}");
     @endif
   </script>
+  <script>
+    // Mengambil elemen toggleMenu dan nav
+    var toggleMenu = document.querySelector('.toggleMenu');
+    var nav = document.querySelector('.nav');
+
+    // Menambahkan event listener untuk saat toggleMenu diklik
+    toggleMenu.addEventListener('click', function() {
+      // Memeriksa apakah nav saat ini memiliki kelas "show"
+      if (nav.classList.contains('show')) {
+        // Menyembunyikan nav
+        nav.classList.remove('show');
+      } else {
+        // Menampilkan nav
+        nav.classList.add('show');
+      }
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+        var ipAddress = data.ip;
+        var currentTime = new Date().toISOString(); // Mendapatkan waktu sekarang dalam format ISO
+
+        $.ajax({
+            url: "http://127.0.0.1:8000/api/pengunjung",
+            method: "POST",
+            data: {
+                pageURL: window.location.href,
+                ipAddress: ipAddress,
+                created_at: currentTime,
+                updated_at: currentTime
+            },
+            success: function(response) {
+                console.log("Pencatatan berhasil");
+            },
+            error: function(xhr, status, error) {
+                console.log("Terjadi kesalahan dalam pencatatan");
+            }
+        });
+    });
+    });
+  </script>
         <script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript" id="wpascript-js-after">
         wpa_field_info = {"wpa_field_name":"pcmzfd8217","wpa_field_value":329136,"wpa_add_test":"no"}
         </script>
         <script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-content/plugins/master-slider/public/assets/js/jquery.easing.min.js?ver=3.8.7" id="jquery-easing-js"></script>
         <script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-content/plugins/master-slider/public/assets/js/masterslider.min.js?ver=3.8.7" id="masterslider-core-js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/rocket-loader@2.4.0/build/js/loader.min.js"></script></body></body>
+        <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="c1abf99a381a9dea68f803e5-|49" defer></script></body></body>
 </html>

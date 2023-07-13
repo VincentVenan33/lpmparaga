@@ -42,6 +42,17 @@ class HomeController extends Controller
             ->get();
         $totalOnline = PengunjungModel::whereDate('created_at', '=', date('Y-m-d'))->count();
         $title = "Dashboard";
+        $news = array();
+        $news = NewsModel::select('*')->orderBy('id', 'desc')->paginate(10);
+        foreach ($news as $nws) {
+            $beritaId = $nws->id;
+
+            // Menghitung jumlah pengunjung yang melihat berita berdasarkan ID
+            $jumlahDilihat = PengunjungModel::where('page', 'LIKE', '%readers/detail/'.$beritaId)->count();
+
+            // Menambahkan data jumlah dilihat ke dalam objek berita
+            $nws->dilihat = $jumlahDilihat;
+        }
         return view('index', [
             'index' => $result,
             'chartcount' => $ccount,
@@ -49,12 +60,12 @@ class HomeController extends Controller
             'totalMonthlyVisitors' => $totalMonthlyVisitors,
             'totalOnline' => $totalOnline,
             'title' => $title,
+            'news' => $news,
         ]);
     }
     public function readers()
     {
         $data = array();
-        // $news = NewsModel::select('*')->orderBy('id', 'desc')->paginate(10);
         $news = NewsModel::with('gambar')->orderBy('id', 'desc')->paginate(10);
         $data['title'] = "Home";
         $data['news'] = $news;

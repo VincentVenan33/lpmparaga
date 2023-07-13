@@ -64,6 +64,68 @@
         </div>
       </div>
     </div>
+    <div class="card table-dilihat">
+    <div class="card-body">
+        <h4 class="card-title">News Data</h4>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                    No.
+                    </th>
+                    <th>
+                    Kategori Berita
+                    </th>
+                    <th>
+                    Judul
+                    </th>
+                    <th>
+                    ID Admin
+                    </th>
+                    <th class="text-center">
+                    Dilihat
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($news as $nws)
+                                <tr>
+                                    <th class="nomor-berita">{{ ( $news->currentPage() - 1 ) * $news->perPage() + $loop->iteration }}</th>
+                                    <td class="kategori-berita">{{$nws->kat_berita}}</td>
+                                    <td class="judul-berita">{{$nws->judul}}</td>
+                                    <td class="admin-berita">{{$nws->id_admin}}</td>
+                                    <td class="dilihat">{{$nws->dilihat}}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <nav aria-label="Table Paging" class="mb-0 text-muted">
+                        <ul class="pagination justify-content-center mb-0">
+                            <li class="page-item{{ ($news->currentPage() == 1) ? ' disabled' : '' }}">
+                                <a class="page-link" href="{{ $news->previousPageUrl() }}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            @for ($i = 1; $i <= $news->lastPage(); $i++)
+                                <li class="page-item{{ ($news->currentPage() == $i) ? ' active' : '' }}">
+                                    <a class="page-link" href="{{ $news->url($i) }}">{{ $i }}</a>
+                                </li>
+                            @endfor
+                            <li class="page-item{{ ($news->currentPage() == $news->lastPage()) ? ' disabled' : '' }}">
+                                <a class="page-link" href="{{ $news->nextPageUrl() }}" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
     <!-- content-wrapper ends -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {

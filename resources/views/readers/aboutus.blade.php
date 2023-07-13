@@ -21,18 +21,18 @@
       <div class="card" id="members-card">
         <div class="card-content">
           <h3>Daftar Anggota Paraga</h3>
-          @foreach($anggota as $agt)
           <ul class="daftar-mini">
+              @foreach($anggota as $agt)
             <li>{{ $agt->jabatan }}~{{ $agt->nama }}</li>
+            @endforeach
           </ul>
-          @endforeach
         </div>
       </div>
 
       <div class="dialog-overlay" id="history-dialog">
         <div class="dialog-card">
           <div class="dialog-card-content">
-            <h3>History of Paraga</h3>
+            <h3 class="history">History of Paraga</h3>
             <img class="big-camera" src="{{ url('') }}/images/Camera.png" alt="Foto Paraga">
             <p>Paraga adalah lembaga pers mahasiswa yang tergabung dalam salah satu unit kegiatan mahasiswa di Universitas Katolik Soegijapranata. Nah, Paraga ini didirikan oleh Bapak Hermawan Paneasiwi, dosen Fakultas Hukum dari Universitas Katolik Soegijapranata pada tahun 1995. Lalu, kata "Paraga" sendiri artinya apa? Kata "Paraga" berasal dari bahasa Sanskerta atau jika dalam bahasa Jawa "progo", yang berarti pameran, tokoh, dan sejenisnya. Oleh karena itu, Paraga diharapkan dapat menjadi wadah bagi mahasiswa yang memiliki minat dan bakat di bidang tulis-menulis, terutama jurnalistik, untuk mengembangkan diri.</p>
           </div>
@@ -41,7 +41,7 @@
       <div class="dialog-overlay" id="logo-dialog">
         <div class="dialog-card">
           <div class="dialog-card-content">
-            <h3>Logo Paraga</h3>
+            <h3 class="logo">Logo Paraga</h3>
             <img class="square" src="{{ url('') }}/images/Paraga HD png bg.png" alt="Foto Paraga">
             <img src="{{ url('') }}/images/16024254591111.png" alt="Foto Paraga">
           </div>
@@ -50,12 +50,12 @@
       <div class="dialog-overlay" id="members-dialog">
         <div class="dialog-card">
           <div class="dialog-card-content">
-            <h3>Daftar Anggota Paraga</h3>
-            @foreach($anggota as $agt)
+            <h3 class="anggota">Daftar Anggota Paraga</h3>
             <ul class="daftar-modal">
-                <li>{{ $agt->jabatan }}~{{ $agt->nama }}</li>
+                @foreach($anggota as $agt)
+                    <li>{{ $agt->jabatan }}~{{ $agt->nama }}</li>
+                @endforeach
             </ul>
-            @endforeach
           </div>
         </div>
       </div>

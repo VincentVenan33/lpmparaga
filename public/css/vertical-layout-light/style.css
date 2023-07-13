@@ -28972,6 +28972,15 @@ font-size: small;
     margin-top: 10px;
 }
 
+.table-dilihat{
+    margin-bottom: 50px;
+
+}
+
+.dilihat{
+    text-align: center;
+}
+
 /* style for off-canvas menu*/
 @media screen and (max-width: 991px) {
   .sidebar-offcanvas {
