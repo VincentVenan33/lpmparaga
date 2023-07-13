@@ -40,6 +40,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <link rel="stylesheet" id="msl-main-css" href="https://sktthemesdemo.net/newspaper/wp-content/plugins/master-slider/public/assets/css/masterslider.main.css?ver=3.8.7" type="text/css" media="all" />
 <link rel="stylesheet" id="msl-custom-css" href="https://sktthemesdemo.net/newspaper/wp-content/uploads/master-slider/custom.css?ver=1.5" type="text/css" media="all" />
 <link rel="stylesheet" id="ns_styles-css" href="https://sktthemesdemo.net/newspaper/wp-content/plugins/themebar/style.css?ver=6.1.1" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script type="9ed4e969d7fc7429504fa1ab-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-includes/js/jquery/jquery.min.js?ver=3.6.1" id="jquery-core-js"></script>
 <script type="9ed4e969d7fc7429504fa1ab-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
 <script type="9ed4e969d7fc7429504fa1ab-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-content/themes/skt-newspaper/js/custom.js?ver=6.1.1" id="skt-newspaper-customscripts-js"></script>
@@ -126,14 +127,14 @@ jQuery(document).ready(function() {
         <span><i class="fa fa-bullhorn"></i> Headline</span>
         </div>
         <div class="news-ticker">
-        <p><marquee behavior="scroll" direction="left" onmouseover="if (!window.__cfRLUnblockHandlers) return false; this.stop();" onmouseout="if (!window.__cfRLUnblockHandlers) return false; this.start();" data-cf-modified-9ed4e969d7fc7429504fa1ab->Pellentesque non sem porttitor, porttitor eros eget, lobortis lacus eugiat vitae augue non, tincidunt posuere</marquee></p>
+        <p><marquee behavior="scroll" direction="left" onmouseover="if (!window.__cfRLUnblockHandlers) return false; this.stop();" onmouseout="if (!window.__cfRLUnblockHandlers) return false; this.start();" data-cf-modified-9ed4e969d7fc7429504fa1ab->Selamat datang di Paraga SCU! Lembaga Pers Mahasiswa yang mengulik ragam peristiwa di seluruh dunia menurut perspektif mahasiswa dan selalu update peristiwa terbaru.</marquee></p>
         </div>
         <div class="searchright">
-        <form role="search" method="get" class="searchbox" action="https://sktthemesdemo.net/newspaper/">
-        <input type="search" class="searchbox-input" placeholder="Search..." value name="s" onkeyup="if (!window.__cfRLUnblockHandlers) return false; buttonUp();" data-cf-modified-9ed4e969d7fc7429504fa1ab->
-        <input type="submit" class value>
-        <span class="searchbox-icon"><i class="fa fa-search"></i></span>
-        </form>
+        {{-- <form role="search" method="get" class="searchbox" read> --}}
+        {{-- <input type="search" class="searchbox-input" placeholder="Search..." value name="s" onkeyup="if (!window.__cfRLUnblockHandlers) return false; buttonUp();" data-cf-modified-9ed4e969d7fc7429504fa1ab->
+        <input type="submit" class value> --}}
+        <span class="searchbox-icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
+        {{-- </form> --}}
         </div>
         <div class="clear"></div>
         </div>
@@ -160,13 +161,14 @@ jQuery(document).ready(function() {
         <div class="menu-top_menu-container"><ul id="menu-top_menu" class="menu"><li id="menu-item-106" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-106"><a href="{{route('index')}}" aria-current="page">Home</a></li>
         <li id="menu-item-121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-121"><a href="#">Kategori Berita</a>
         <ul class="sub-menu">
-        <li id="menu-item-114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-114"><a href="#">Sosial Budaya</a></li>
-        <li id="menu-item-115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"><a href="#">Kesehatan</a></li>
-        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="#">Politik</a></li>
-        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="#">Ekonomi</a></li>
-        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="#">Gametech</a></li>
-        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="#">Olahraga</a></li>
-        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="#">Opini</a></li>
+        <li id="menu-item-114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-114"><a href="{{ route('category', 'Lastest News') }}">Lastest News</a></li>
+        <li id="menu-item-114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-114"><a href="{{ route('category', 'Sosial Budaya') }}">Sosial Budaya</a></li>
+        <li id="menu-item-115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"><a href="{{ route('category', 'Kesehatan') }}">Kesehatan</a></li>
+        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="{{ route('category', 'Politik') }}">Politik</a></li>
+        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="{{ route('category', 'Ekonomi') }}">Ekonomi</a></li>
+        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="{{ route('category', 'Gametech') }}">Gametech</a></li>
+        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="{{ route('category', 'Olahraga') }}">Olahraga</a></li>
+        <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="{{ route('category', 'Opini') }}">Opini</a></li>
         </ul>
         </li>
         <li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="{{route('contactus')}}">Contact Us</a></li>
@@ -186,13 +188,14 @@ jQuery(document).ready(function() {
         <h4>Quick Links</h4>
         <div class="footer-col-3">
         <div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-156" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-156"><a href="{{route('index')}}" aria-current="page">Home</a></li>
-        <li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="#">Sosial Budaya</a></li>
-        <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="#">Kesehatan</a></li>
-        <li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="#">Politik</a></li>
-        <li id="menu-item-157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-157"><a href="#">Ekonomi</a></li>
-        <li id="menu-item-158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-158"><a href="#">Gametech</a></li>
-        <li id="menu-item-159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-159"><a href="#">Olahraga</a></li>
-        <li id="menu-item-160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-160"><a href="#">Opini</a></li>
+        <li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="{{ route('category', 'Lastest News') }}">Lastest News</a></li>
+        <li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="{{ route('category', 'Sosial Budaya') }}">Sosial Budaya</a></li>
+        <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="{{ route('category', 'Kesehatan') }}">Kesehatan</a></li>
+        <li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="{{ route('category', 'Politik') }}">Politik</a></li>
+        <li id="menu-item-157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-157"><a href="{{ route('category', 'Ekonomi') }}">Ekonomi</a></li>
+        <li id="menu-item-158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-158"><a href="{{ route('category', 'Gametech') }}">Gametech</a></li>
+        <li id="menu-item-159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-159"><a href="{{ route('category', 'Olahraga') }}">Olahraga</a></li>
+        <li id="menu-item-160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-160"><a href="{{ route('category', 'Opini') }}">Opini</a></li>
         <li id="menu-item-170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170"><a href="{{route('aboutus')}}">About Us</a></li>
         <li id="menu-item-162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-162"><a href="{{route('contactus')}}">Contact Us</a></li>
         </ul></div>
@@ -201,55 +204,21 @@ jQuery(document).ready(function() {
         <div class="footer-cols widget-column-2">
         <h4>Recent Posts</h4>
         <div class="footer-col-3">
-        <ul class="footer-post">
-        <li><a href="https://sktthemesdemo.net/newspaper/feugiat-semper-justo/">Feugiat semper justo</a></li>
-        <li><a href="https://sktthemesdemo.net/newspaper/lorem-mauris-commodo-velit/">lorem mauris commodo velit</a></li>
-        <li><a href="https://sktthemesdemo.net/newspaper/vestibulum-et-vestibulum-urna/">Vestibulum et vestibulum urna</a></li>
-        <li><a href="https://sktthemesdemo.net/newspaper/curabitur-sed-dapibus-dolor/">Curabitur sed dapibus dolor</a></li>
-        <li><a href="https://sktthemesdemo.net/newspaper/maecenas-in-libero-diam/">Maecenas in libero diam</a></li>
-        </ul>
+            <ul>
+                @foreach($recentPosts as $post)
+                    <li>
+                        <a href="{{ route('detailreader', $post->id) }}">{{ $post->judul }}</a>
+                    </li>
+                @endforeach
+            </ul>
         </div>
         </div>
         <div class="footer-cols widget-column-4 last_column">
         <h4>Get In Touch</h4>
         <div class="footer-col-3">
         <div class="social-icon">
-        <a href="#" target="_blank" class="fa fa-facebook fa-2x" title="facebook"></a>
-        <a href="#" target="_blank" class="fa fa-twitter fa-2x" title="twitter"></a>
-        <a href="#" target="_blank" class="fa fa-linkedin fa-2x" title="linkedin"></a>
-        <a href="#" target="_blank" class="fa fa-pinterest fa-2x" title="pinterest"></a>
-        <a href="#" target="_blank" class="fa fa-google-plus fa-2x" title="google-plus"></a>
-        <a href="#" target="_blank" class="fa fa-youtube fa-2x" title="youtube"></a>
-        <a href="#" target="_blank" class="fa fa-skype fa-2x" title="skype"></a>
-        <a href="#" target="_blank" class="fa fa-tumblr fa-2x" title="tumblr"></a>
-        <a href="#" target="_blank" class="fa fa-instagram fa-2x" title="instagram"></a>
-        <a href="#" target="_blank" class="fa fa-yahoo fa-2x" title="yahoo"></a>
-        <a href="#" target="_blank" class="fa fa-dribbble fa-2x" title="dribbble"></a>
-        <a href="#" target="_blank" class="fa fa-stumbleupon fa-2x" title="stumbleupon"></a>
-        <a href="#" target="_blank" class="fa fa-stumbleupon fa-2x" title="stumbleupon"></a>
-        <a href="#" target="_blank" class="fa fa-soundcloud fa-2x" title="soundcloud"></a>
-        <a href="#" target="_blank" class="fa fa-behance fa-2x" title="behance"></a>
-        <a href="#" target="_blank" class="fa fa-yelp fa-2x" title="yelp"></a>
-        <a href="#" target="_blank" class="fa fa-wordpress fa-2x" title="wordpress"></a>
-        <a href="#" target="_blank" class="fa fa-vine fa-2x" title="vine"></a>
-        <a href="#" target="_blank" class="fa fa-rss fa-2x" title="rss"></a>
-        <a href="#" target="_blank" class="fa fa-flickr fa-2x" title="flickr"></a>
-        <a href="#" target="_blank" class="fa fa-linkedin fa-2x" title="linkedin"></a>
-        <a href="#" target="_blank" class="fa fa-pinterest fa-2x" title="pinterest"></a>
-        <a href="#" target="_blank" class="fa fa-google-plus fa-2x" title="google-plus"></a>
-        <a href="#" target="_blank" class="fa fa-youtube fa-2x" title="youtube"></a>
-        <a href="#" target="_blank" class="fa fa-facebook fa-2x" title="facebook"></a>
-        <a href="#" target="_blank" class="fa fa-twitter fa-2x" title="twitter"></a>
-        <a href="#" target="_blank" class="fa fa-linkedin fa-2x" title="linkedin"></a>
-        <a href="#" target="_blank" class="fa fa-pinterest fa-2x" title="pinterest"></a>
-        <a href="#" target="_blank" class="fa fa-google-plus fa-2x" title="google-plus"></a>
-        <a href="#" target="_blank" class="fa fa-youtube fa-2x" title="youtube"></a>
-        <a href="#" target="_blank" class="fa fa-facebook fa-2x" title="facebook"></a>
-        <a href="#" target="_blank" class="fa fa-twitter fa-2x" title="twitter"></a>
-        <a href="#" target="_blank" class="fa fa-linkedin fa-2x" title="linkedin"></a>
-        <a href="#" target="_blank" class="fa fa-pinterest fa-2x" title="pinterest"></a>
-        <a href="#" target="_blank" class="fa fa-google-plus fa-2x" title="google-plus"></a>
-        <a href="#" target="_blank" class="fa fa-youtube fa-2x" title="youtube"></a>
+        <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=ukmparaga@unika.ac.id" target="_blank" class="fa fa-envelope fa-2x" title="facebook"></a>
+        <a href="https://www.instagram.com/paraga_unika/" target="_blank" class="fa fa-instagram fa-2x" title="instagram"></a>
         </div>
         <div class="clear"></div>
         </div>
@@ -261,8 +230,8 @@ jQuery(document).ready(function() {
         </div>
         <div class="copyright-wrapper">
         <div class="container">
-        <div class="copyright-txt">&copy; 2021 <a href="#" target="_blank"> SKT Newspaper</a>. All Rights Reserved</div>
-        <div class="design-by">Design by SKT Themes</div>
+        <div class="copyright-txt">Copyright 2023 All Rights Reserved By: <a href="https://www.instagram.com/paraga_unika/" target="_blank"> Paraga SCU</a></div>
+        <div class="design-by">Design by LPM PARAGA SCU</div>
         </div>
         <div class="clear"></div>
         </div>
@@ -322,11 +291,56 @@ jQuery(document).ready(function() {
             function eraseCookie(name) {
                 createCookie(name,"",-1);
             }
-            </script><script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-content/plugins/honeypot/includes/js/wpa.js?ver=2.1" id="wpascript-js"></script>
+            </script>
+            <script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-content/plugins/honeypot/includes/js/wpa.js?ver=2.1" id="wpascript-js"></script>
+            <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap -->
+{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/js/toastr.js"></script>
+<script>
+    @if(Session::has('message'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+            toastr.success("{{ session('message') }}");
+    @endif
+
+    @if(Session::has('error'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+            toastr.error("{{ session('error') }}");
+    @endif
+
+    @if(Session::has('info'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+            toastr.info("{{ session('info') }}");
+    @endif
+
+    @if(Session::has('warning'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+            toastr.warning("{{ session('warning') }}");
+    @endif
+  </script>
         <script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript" id="wpascript-js-after">
         wpa_field_info = {"wpa_field_name":"pcmzfd8217","wpa_field_value":329136,"wpa_add_test":"no"}
         </script>
         <script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-content/plugins/master-slider/public/assets/js/jquery.easing.min.js?ver=3.8.7" id="jquery-easing-js"></script>
         <script type="0f9aff8dd9d0fa5cc53b32fe-text/javascript" src="https://sktthemesdemo.net/newspaper/wp-content/plugins/master-slider/public/assets/js/masterslider.min.js?ver=3.8.7" id="masterslider-core-js"></script>
-        <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="0f9aff8dd9d0fa5cc53b32fe-|49" defer></script></body></body>
+        <script src="https://cdn.jsdelivr.net/npm/rocket-loader@2.4.0/build/js/loader.min.js"></script></body></body>
 </html>

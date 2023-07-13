@@ -21,12 +21,11 @@
       <div class="card" id="members-card">
         <div class="card-content">
           <h3>Daftar Anggota Paraga</h3>
-          <ul>
-            <li>Anggota 1</li>
-            <li>Anggota 2</li>
-            <li>Anggota 3</li>
-            <li>Anggota 4</li>
+          @foreach($anggota as $agt)
+          <ul class="daftar-mini">
+            <li>{{ $agt->jabatan }}~{{ $agt->nama }}</li>
           </ul>
+          @endforeach
         </div>
       </div>
 
@@ -52,12 +51,11 @@
         <div class="dialog-card">
           <div class="dialog-card-content">
             <h3>Daftar Anggota Paraga</h3>
-            <ul class="daftar">
-              <li>Anggota 1</li>
-              <li>Anggota 2</li>
-              <li>Anggota 3</li>
-              <li>Anggota 4</li>
+            @foreach($anggota as $agt)
+            <ul class="daftar-modal">
+                <li>{{ $agt->jabatan }}~{{ $agt->nama }}</li>
             </ul>
+            @endforeach
           </div>
         </div>
       </div>

@@ -21,10 +21,8 @@
   <link rel="stylesheet" href="{{  url('') }}/css/trix.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{  url('') }}/images/Copy of Paraga HD png bg SQUARE.png" />
-  <link rel="stylesheet" type="text/css"
-     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-     {{-- <link rel="stylesheet" href="{{  url('') }}/responsive_filemanager/filemanager/css/style.css"> --}}
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
   <div class="container-scroller">
@@ -102,6 +100,14 @@
             </a>
           </li>
           @endif
+          @if(auth()->user()->role === 'SUPER_ADMIN')
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('viewanggota')}}">
+              <i class="icon-command menu-icon"></i>
+              <span class="menu-title">Anggota Paraga</span>
+            </a>
+          </li>
+          @endif
           <li class="nav-item">
             <a class="nav-link" href="{{route('viewnews')}}">
               <i class="icon-paper menu-icon"></i>
@@ -140,7 +146,7 @@
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
                 <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright 2023 All Rights Reserved By:
                     <a href="https://www.instagram.com/paraga_unika/" style="text-decoration:none;">
-                    <strong class="text-info">Paraga Unika</strong>
+                    <strong class="text-info">Paraga SCU</strong>
                     </a>
                 </span>
                 </div>

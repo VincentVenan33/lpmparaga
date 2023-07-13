@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\ContactModel;
+use App\Models\NewsModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
@@ -33,5 +34,8 @@ class AppServiceProvider extends ServiceProvider
                 $data['unread_count'] = $unread_count;
             }
         });
+
+        $recentPosts = NewsModel::orderBy('id', 'desc')->take(5)->get();
+        View::share('recentPosts', $recentPosts);
     }
 }

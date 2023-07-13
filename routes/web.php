@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GambarController;
 use App\Http\Controllers\HomeController;
@@ -41,6 +42,14 @@ Route::post('admin/users/save', [UsersController::class, 'saveusers'])->name('sa
 Route::get('admin/users/change/{id}', [UsersController::class, 'changeusers'])->name('changeusers')->middleware('auth');
 Route::post('admin/users/update', [UsersController::class, 'updateusers'])->name('updateusers')->middleware('auth');
 Route::get('admin/users/delete/{id}', [UsersController::class, 'deleteusers'])->name('deleteusers')->middleware('auth');
+//anggota
+Route::get('admin/anggota/view', [AnggotaController::class, 'viewanggota'])->name('viewanggota')->middleware('auth');
+Route::get('admin/anggota/add', [AnggotaController::class, 'addanggota'])->name('addanggota')->middleware('auth');
+Route::post('admin/anggota/save', [AnggotaController::class, 'saveanggota'])->name('saveanggota')->middleware('auth');
+Route::get('admin/anggota/change/{id}', [AnggotaController::class, 'changeanggota'])->name('changeanggota')->middleware('auth');
+Route::post('admin/anggota/update', [AnggotaController::class, 'updateanggota'])->name('updateanggota')->middleware('auth');
+Route::get('admin/anggota/detail/{id}', [AnggotaController::class, 'detailanggota'])->name('detailanggota')->middleware('auth');
+Route::get('admin/anggota/delete/{id}', [AnggotaController::class, 'deleteanggota'])->name('deleteanggota')->middleware('auth');
 //profile
 Route::get('admin/profile/change', [ProfilController::class, 'changeprofil'])->name('changeprofil')->middleware('auth');
 Route::post('admin/profile/update', [ProfilController::class, 'updateprofile'])->name('updateprofile')->middleware('auth');
@@ -69,6 +78,8 @@ Route::get('admin/contact/delete/{id}', [ContactController::class, 'deletecontac
 Route::get('admin/contact/readAll', [ContactController::class, 'readAll'])->name('readAllcontact')->middleware('auth');
 //reader
 Route::get('readers/detail', [ReaderController::class, 'detailreader'])->name('detailreader');
-// Route::get('reader/detail/{id}', [ReaderController::class, 'detailreader'])->name('detailreader');
+Route::get('readers/detail/{id}', [ReaderController::class, 'detailreader'])->name('detailreader');
+Route::get('readers/category/{kat_berita}', [ReaderController::class, 'category'])->name('category');
 Route::get('readers/aboutus', [ReaderController::class, 'aboutus'])->name('aboutus');
-Route::get('reader/contactus', [ReaderController::class, 'contactus'])->name('contactus');
+Route::get('readers/contactus', [ReaderController::class, 'contactus'])->name('contactus');
+Route::post('eaders/contactus/sendmessage', [ReaderController::class, 'sendmessage'])->name('sendmessage');

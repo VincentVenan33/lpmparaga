@@ -137,8 +137,134 @@
     margin-top: 30px;
 }
 
-.daftar {
+
+.daftar-mini li{
+    font-family: "Chomsky", sans-serif;
+    font-size: 10px;
+    display: inline-block;
+}
+
+.daftar-modal {
     margin-top: 20px;
+}
+
+.daftar-modal li{
+    font-family: "Chomsky", sans-serif;
+    margin-top: 20px;
+    font-size: 35px;
+    display: inline-block;
+}
+
+#carouselExampleAutoplaying .carousel-control-prev,
+#carouselExampleAutoplaying .carousel-control-next {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: transparent;
+}
+
+#carouselExampleAutoplaying .carousel-control-prev:hover,
+#carouselExampleAutoplaying .carousel-control-next:hover {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.135);
+}
+
+#carouselExampleAutoplaying .carousel-control-prev:focus,
+#carouselExampleAutoplaying .carousel-control-next:focus {
+    outline: none;
+    box-shadow: none;
+    color: rgba(255, 255, 255, 0.135);
+}
+
+#carouselExampleAutoplaying {
+    width: 100%;
+    overflow: hidden;
+    margin: 10% 0 10% 0;
+  }
+
+  #carouselExampleAutoplaying .carousel-inner {
+    height: 120%;
+  }
+
+  #carouselExampleAutoplaying .carousel-inner .carousel-item img {
+    width: 100%;
+    margin: auto;
+}
+
+.menu-top_menu-container a{
+    text-decoration: none !important;
+}
+
+.pagination a{
+    text-decoration: none;
+}
+
+.post-navigation{
+    justify-content: center;
+}
+
+.post-comment a {
+    text-decoration: none;
+    color: #ff7f00;
+}
+
+.widget_recent_entries a{
+    text-decoration: none;
+}
+
+.entry-title a{
+    text-decoration: none !important;
+}
+
+.post-categories a{
+    color: #ff7f00 !important;
+    text-decoration: none;
+}
+
+.post-categories a:hover{
+    color: #135495 !important;
+}
+
+.copyright-txt span{
+    color: black !important;
+}
+
+.copyright-txt a{
+    text-decoration: none;
+
+}
+
+.copyright-txt a strong{
+    color: #000000 !important;
+}
+
+.site-category{
+    width: 810px !important;
+}
+
+.site-contact{
+    width: 810px !important;
+}
+
+.layoutfull h6 a{
+    text-decoration: none !important;
+}
+
+.entry-summary a{
+    text-decoration: none;
+    cursor: unset;
+    color: #000000;
+    pointer-events: none;
+}
+
+.entry-summary a:hover{
+    color: #000000;
+}
+
+.entry-summary a:visited{
+    color: #000000;
 }
 
 @keyframes enlarge {

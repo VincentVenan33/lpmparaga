@@ -108,7 +108,7 @@ section { padding:60px 0;}
 .searchbox-input:-moz-placeholder {color:#545454;}
 .searchbox-input::-moz-placeholder {color:#545454;}
 .searchbox-input:-ms-input-placeholder {color:#545454;}
-.searchbox-icon, .searchbox-submit{ width:50px; height:44px;  line-height:44px; display:block; position:absolute; top:0; right:0; padding:0; margin:0 !important; border:0; outline:0; text-align:center; cursor:pointer; color:#ffffff; background:#ff7f00; }
+.searchbox-icon, .searchbox-submit{ width:50px; height:44px;  line-height:44px; display:block; position:absolute; top:0; right:0; padding:0; margin:0 !important; border:0; outline:0; text-align:center; color:#ffffff; background:#ff7f00; }
 .searchbox-open{ width:100%;}
 .searchbox input[type="submit"] {margin-top:5px;}
 
@@ -402,10 +402,10 @@ a.toggleMenu:hover{color:#ff7f00;}
 h3.widget-title{color:#fff; margin:-20px -20px 20px -20px; font-size:18px; padding:20px; position:relative; border-bottom:1px solid #edecec;}
 #sidebar .widget{background-color:#fff; color:#000; padding:20px; border:1px solid #dddcdc; margin-bottom:30px; position:relative; box-shadow:0 0 3px #dddcdc;}
 #sidebar .widget ul{ list-style:none; margin:0; padding:0;}
-#sidebar .widget ul li{list-style:none;border-bottom:1px dotted #c1c1c1;display:block;padding:10px 0 10px 20px; }
+#sidebar .widget ul li{list-style:none;border-bottom:1px dotted #c1c1c1;display:block;padding:10px 0 10px 20px;}
 #sidebar .widget ul li.icon:before{color:#333; content:"\f105"; font-size:17px; font-family:FontAwesome; position:relative; left:-20px;}
 #sidebar .widget ul li a:hover, #sidebar .widget ul li:hover.icon:before{ opacity:0.8}
-#sidebar .widget ul li a{  color:#333; line-height:22px;  }
+#sidebar .widget ul li a{  color:#333; line-height:22px; text-decoration: none;}
 #sidebar .widget ul li:last-child{ border-bottom:none;}
 #sidebartabs h3.widget-title{ display:none;}
 #sidebartabs.widget{ background-color:transparent; border:none; box-shadow:none; padding:0;}
@@ -422,10 +422,10 @@ h3.widget-title{color:#fff; margin:-20px -20px 20px -20px; font-size:18px; paddi
 #about.widget img{ margin:5px 0 20px;}
 #sidebar .Social_Count_Widget.widget{ padding:0;}
 #sidebar .Social_Count_Widget h3.widget-title{ margin:0;}
-.counter{ float:left; width:74.5px; text-align:center; border-right:1px solid #edecec; border-bottom:1px solid #edecec; padding:10px 5px;}
+.counter{ float:left; width:20%; text-align:center; border-right:1px solid #edecec; border-bottom:1px solid #edecec; padding:10px 5px;}
 .counter span.bold{ font-weight:bold; font-size:12px;}
-.counter span{ display:block; font-size:11px; margin-top:5px; color:#888787; line-height:10px;}
-.counter a{ background-color:#888787; color:#Fff; width:23px; height:23px; line-height:23px; text-align:center; border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50% display:inline-block; transition:0.6s; -moz-transition:0.6s; -webkit-transition:0.6s; -o-transition:0.6s; font-size:12px; }
+.counter span{ display:block; font-size:15px; margin-top:5px; color:#888787; line-height:10px;}
+.counter a{ background-color:#888787; color:#Fff; width:43px; height:43px; line-height:43px; text-align:center; border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50% display:inline-block; transition:0.6s; -moz-transition:0.6s; -webkit-transition:0.6s; -o-transition:0.6s; font-size:22px; }
 .counter a:hover{ background-color:#ff7f00; color:#Fff;}
 .counter a:last-child{ margin-right:0;}
 #sidebar .phone-no a{ color:#333;}
@@ -481,11 +481,11 @@ h3.widget-title{color:#fff; margin:-20px -20px 20px -20px; font-size:18px; paddi
 /* Page Layout CSS
 -------------------------------------------*/
 .pagecontent{ padding:40px 0;}
-.site-main{ width:510px; margin:0; padding:0 35px; float:left;  position:relative;}
+.site-main{ width:845px; margin:0; padding:0 35px; float:left;  position:relative;}
 .sitefull{ width:100% !important; position:relative; float:none; padding:0;}
 .nosidebar{ margin:0 auto; float:none; width:965px; padding:0;}
 .FloatRight{ float:right !important; width:72.9% !important; padding-right:0 !important;}
-.FloatLeft{ float:left !important; width:72.9% !important; padding-left:0 !important;}
+.FloatLeft{ float:left !important; width:100% !important; padding-left:0 !important;}
 .contentarea{ background-color:#fff; padding:25px;}
 .contentarea p{margin-bottom:20px; line-height:20px;}
 /* Category Style Grid view CSS
@@ -502,7 +502,7 @@ h1.entry-title{ font-size:18px !important; border-bottom:1px solid #e8e6e6; padd
 #recentpost-2-cols .column-2 h6{ text-transform:none; font-size:16px; font-weight:400;}
 #recentpost-2-cols .content2cl{ padding:20px;}
 #recentpost-2-cols .PostMeta{ font-size:12px;}
-.morebtn{ background-color:#fda32f; color:#fff; text-transform:uppercase; padding:8px 15px; font-size:12px; font-weight:bold; display:inline-block;}
+.morebtn{ background-color:#fda32f; color:#fff; text-transform:uppercase; padding:8px 15px; font-size:12px; font-weight:bold; display:inline-block; text-decoration: none;}
 .morebtn:hover{ background-color:#ff7f00;  color:#fff;}
 /* Home Layout Timeline CSS
 -------------------------------------------*/
@@ -519,7 +519,7 @@ h1.entry-title{ font-size:18px !important; border-bottom:1px solid #e8e6e6; padd
 /* Home Layout Classic CSS
 -------------------------------------------*/
 #classiclayout .layoutfull{ margin-bottom:30px;}
-#classiclayout .layoutfull .thumboxfix{ background-color:#dedede; text-align:center;}
+#classiclayout .layoutfull .thumboxfix{ background-color:#dedede; text-align:center; width: 50%;}
 #classiclayout .layoutfull .thumboxfix img{width:100%; height:auto;}
 #classiclayout .layoutfull h6{ text-transform:none; font-size:20px; font-weight:400; margin:20px 0;}
 
