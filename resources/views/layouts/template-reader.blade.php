@@ -150,9 +150,6 @@ jQuery(document).ready(function() {
                     <h2>LPM PARAGA</h2>
                     <span class="tagline">Lembaga Pers Mahasiswa yang mengulik ragam peristiwa di seluruh dunia menurut perspektif mahasiswa</span>
                 </div>
-            {{-- <a href="https://sktthemesdemo.net/newspaper/">
-            <img src="https://sktthemesdemo.net/newspaper/wp-content/themes/skt-newspaper/images/add-banner.jpg" alt=" " class="alignright" />
-            </a> --}}
             </div>
             <div class="clear"></div>
             </div>

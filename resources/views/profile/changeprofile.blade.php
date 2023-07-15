@@ -62,9 +62,7 @@
                 </div>
             </div>
                 <button type="submit" class="btn btn-primary mr-2"><i class="ti-save"></i>&nbsp; Save</button>
-                <button class="btn btn-light mr-2" onclick="window.history.back();">
-                    <i class="ti-angle-double-left"></i>&nbsp; Cancel
-                </button>
+                    <a class="btn btn-light text-black text-decoration-none" href="{{route('dashboard')}}"><i class="ti-angle-double-left"></i>&nbsp; Cancel</a>
                 @if (Auth::user()->role !== 'SUPER_ADMIN')
                 <button type="button" class="btn btn-danger btn-icon-text">
                     <a href="{{ route('deleteprofil') }}" class="text-white text-decoration-none" onclick="return confirm('Apakah Anda yakin ingin menghapus akun?');">

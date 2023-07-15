@@ -64,6 +64,9 @@
                             <div class="carousel-inner">
                                 @foreach ($news->gambar as $key => $gambar)
                                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                        <div class="loading-overlay">
+                                            <div class="loading-spinner"></div>
+                                        </div>
                                         <img src="{{ asset('storage/image/upload/'.$gambar->foto) }}" class="d-block" alt="{{ $gambar->foto }}">
                                     </div>
                                 @endforeach
@@ -81,7 +84,6 @@
                         {{-- <div class="clear"></div> --}}
                     </div>
                     <div class="pagination post-navigation">
-                        <div>
                             <ul>
                                 <li>
                                     @if ($nextPost)
@@ -105,18 +107,46 @@
                                     @endif
                                 </li>
                             <ul>
-                        </div>
                     </div>
                 </div>
             </article>
         </div>
     </div>
     <div class="clear"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function() {
-        $('.carousel').carousel();});
-</script>
+    <link rel="stylesheet" href="{{  url('') }}/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+        function showImages() {
+            var carouselItems = document.querySelectorAll('.carousel-item');
+            carouselItems.forEach(function(item) {
+                var image = item.querySelector('img');
+                image.style.display = 'block';
+            });
+
+            var loadingOverlay = document.querySelectorAll('.loading-overlay');
+            loadingOverlay.forEach(function(overlay) {
+                setTimeout(function() {
+                    overlay.style.display = 'none';
+                }, 800);
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', showImages);
+        window.addEventListener('load', showImages);
+    </script>
+    <script>
+        function resizeImages() {
+            var carouselItems = document.querySelectorAll('.carousel-item');
+            carouselItems.forEach(function(item) {
+                var image = item.querySelector('img');
+                if (image.height > 400) {
+                    image.style.height = '400px';
+                    image.style.width = 'auto';
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', resizeImages);
+        window.addEventListener('load', resizeImages);
+    </script>
 @endsection

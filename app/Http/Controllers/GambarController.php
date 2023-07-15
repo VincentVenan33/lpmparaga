@@ -161,9 +161,11 @@ class GambarController extends Controller
             $gambar->foto = $namaFotoBaru;
         }
 
-        $gambar->save();
-
-        return redirect()->route('viewgambar')->with('message', 'Gambar updated successfully');
+        if ($gambar->save()) {
+            return redirect()->route('viewgambar')->with('message', 'Gambar updated successfully');
+        } else {
+            return redirect()->route('viewgambar')->with('error', 'Gambar error to update');
+        }
     }
 
 

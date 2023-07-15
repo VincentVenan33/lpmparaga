@@ -439,7 +439,7 @@ h3.widget-title{color:#fff; margin:-20px -20px 20px -20px; font-size:18px; paddi
 .footer-cols ul{ margin:0; padding:0;}
 .footer-cols ul li{ display:block; list-style:none;border-bottom:1px dotted #454545; padding:8px 0;}
 .footer-cols ul li.icon:before{content:"\f105"; font-size:17px; font-family:FontAwesome; position:relative; left:0px;}
-.footer-cols ul li a{color:#fff; padding:0 0 0 20px; line-height:22px;}
+.footer-cols ul li a{color:#fff; padding:0 0 0 0px; line-height:22px;}
 .footer-cols ul li.current_page_item a, .footer-cols ul li a:hover, .footer-cols ul li:hover.icon:before, .footer-cols ul li.current_page_item.icon:before  { opacity:0.5;}
 .footer-col-3 .menu { -moz-column-count: 2; -moz-column-gap: 23px; -webkit-column-count: 2; -webkit-column-gap: 23px; column-count: 2; column-gap: 23;}
 .widget-column-4{width:22.3%; margin-right:0;}
@@ -481,7 +481,7 @@ h3.widget-title{color:#fff; margin:-20px -20px 20px -20px; font-size:18px; paddi
 /* Page Layout CSS
 -------------------------------------------*/
 .pagecontent{ padding:40px 0;}
-.site-main{ width:845px; margin:0; padding:0 35px; float:left;  position:relative;}
+.site-main{ width:810px; margin:0; padding:0 35px; float:left;  position:relative;}
 .sitefull{ width:100% !important; position:relative; float:none; padding:0;}
 .nosidebar{ margin:0 auto; float:none; width:965px; padding:0;}
 .FloatRight{ float:right !important; width:72.9% !important; padding-right:0 !important;}

@@ -57,14 +57,20 @@ class ProfilController extends Controller
         }
 
         $user->status = $request->has('status') ? 1 : 0;
-        $user->save();
+        // $user->save();
 
-        if ($isProfileUpdated) {
-            return redirect()->route('index')->with('message', 'Profil telah diperbarui.');
-        } elseif ($request->has('cancel')) {
-            return redirect()->route('index')->with('error', 'Gagal memperbarui profil.');
+        // if ($isProfileUpdated) {
+        //     return redirect()->route('index')->with('message', 'Profil telah diperbarui.');
+        // } elseif ($request->has('cancel')) {
+        //     return redirect()->route('index')->with('error', 'Gagal memperbarui profil.');
+        // } else {
+        //     return redirect()->route('index');
+        // }
+
+        if ($user->save()) {
+            return redirect()->route('dashboard')->with('message', 'News updated successfully');
         } else {
-            return redirect()->route('index');
+            return redirect()->route('dashboard')->with('error', 'News error to update');
         }
     }
 

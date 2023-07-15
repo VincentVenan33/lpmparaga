@@ -6,6 +6,10 @@
     <div class="card-body">
         <h4 class="card-title">Detail News</h4>
         <div class="form-group">
+            <label for="id">Id Berita</label>
+            <input type="text" name="id" value="{{ $news->id }}" class="form-control bg-white" readonly>
+            </div>
+        <div class="form-group">
         <label for="kat_berita">Kategori Berita</label>
         <select name="kat_berita" style="color: black; background: white;" class="form-control @error('kat_berita')is-invalid @enderror" disabled>
             <option value="{{ $news->kat_berita }}" disabled selected>{{ $news->kat_berita }}</option>

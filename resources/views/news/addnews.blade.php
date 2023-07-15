@@ -39,12 +39,12 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="foto_url">Images</label><br>
+            <label for="foto">Images</label><br>
             <div id="preview_images"></div>
             <div class="custom-file">
-                <input type="file" name="foto_url[]" class="custom-file-input @error('foto_url') is-invalid @enderror" id="foto_url" onchange="previewImages(this);" multiple>
-                <label class="custom-file-label" for="foto_url" id="images-label">Choose images</label>
-                @error('foto_url')
+                <input type="file" name="foto[]" class="custom-file-input @error('foto') is-invalid @enderror" id="foto" onchange="previewImages(this);" multiple>
+                <label class="custom-file-label" for="foto" id="images-label">Choose images</label>
+                @error('foto')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
