@@ -176,7 +176,11 @@ jQuery(document).ready(function() {
         <div class="clear"></div>
         </div>
         <div class="innerbanner">
-            <img src="https://sktthemesdemo.net/newspaper/wp-content/themes/skt-newspaper/images/default-banner.jpg" alt> </div>
+            {{-- <img src="https://sktthemesdemo.net/newspaper/wp-content/themes/skt-newspaper/images/default-banner.jpg" alt> --}}
+            <video autoplay loop muted>
+                <source src="{{  url('') }}/video/LPM Paraga Unika Soegijapranata.mp4" type="video/mp4">
+            </video>
+        </div>
         @yield('reader')
         <div id="footer-wrapper">
         <div class="footer">

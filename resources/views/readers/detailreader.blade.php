@@ -139,8 +139,11 @@
             var carouselItems = document.querySelectorAll('.carousel-item');
             carouselItems.forEach(function(item) {
                 var image = item.querySelector('img');
-                if (image.height > 400) {
-                    image.style.height = '400px';
+                var windowWidth = window.innerWidth;
+                var maxHeight = (windowWidth <= 768) ? 200 : 400;
+
+                if (image.height > maxHeight) {
+                    image.style.height = maxHeight + 'px';
                     image.style.width = 'auto';
                 }
             });
@@ -148,5 +151,6 @@
 
         window.addEventListener('DOMContentLoaded', resizeImages);
         window.addEventListener('load', resizeImages);
+        window.addEventListener('resize', resizeImages);
     </script>
 @endsection
